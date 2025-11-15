@@ -5,224 +5,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GreenCare</title>
-    <link rel="stylesheet" href="assets\styles\MyStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles/MyStyle.css">
 </head>
 <header>
-    <div class="header-container">
-        <div class="logo">
-            <img src="assets\Images\Greencare.png" alt="logo" class="logo">
-        </div>
-
-        <nav class="nav-links">
-            <ul>
-                <li>
-                    <a href="">Sobre Nosotros</a>
-                </li>
-                <li class="panel-des">
-                    <a href="">Como Funciona<img src="assets\Images\arrow-icon.png"></a>
-                    <ul class="submenu">
-                        <li><a href="">Opcion1</a></li>
-                        <li><a href="">Opcion2</a></li>
-                        <li><a href="">Opcion3</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-        <div class="Registro-usuario">
-            <button class="Login-button"><img src="assets\Images\earth-icon.png" alt="logo-earth">Login</button>
-            <button class="Register-button">Registrarse</button>
-        </div>
+    <img src="assets/Images/GreenCare.png" alt="GreenCareLogo" class="logo">
+    <a href="#menu-principal">Inicio</a>
+    <a href="">Caracteristicas</a>
+    <a href="">Sobre Nosotros</a>
+    <a href="">¿Como Funciona?</a>
+    <div class="header-botones">
+        <button class="login"><img src="assets/Images/earth-icon.png">Iniciar Sesion</button>
+        <img src="assets/Images/Linea.png">
+        <button class="register">Registrarse</button>
     </div>
 </header>
 
 <body>
-    <div class="Inicio">
-        <h1 class="GreenCare">GreenCare</h1>
-        <h2>Inteligencia para la vida verde</h2>
-        <h3>Escanea tus plantas, recibe un diagnostico inmediato y aprende a como cuidarlas mejor.<br>
-            Tecnologia simple y practica para el bienestar de lo verde
-        </h3>
-    </div>
-    <div class="Descarga">
-        <button>Descarga Ya!</button>
-        <div class="Plataformas">
-            <button><img src="assets\Images\play-logo.png" alt="Play"> Google Play</button>
-            <button><img src="assets\Images\App_Store.png" alt="App">App Store</button>
+    <div id="menu-principal">
+        <div class="contenido">
+            <div class="plantas-body">
+                <img src="assets/Images/plantas.png">
+            </div>
+            <ul class="texto-body">
+                <li>
+                    <h1>Cuida tus plantas con inteligencia</h1>
+                </li>
+                <li>
+                    <h2>Diagnosticos rápidos y fiables con visión por IA</h2>
+                </li>
+                <li>
+                    <h2>Identifica plagas, enfermedades y necesidades de tu planta en segundos.</h2>
+                </li>
+                <li>
+                    <button>Descárgala ahora</button>
+                </li>
+            </ul>
         </div>
-    </div>
-    <div class="Info-container">
-
-        <ul class="Info-nav">
-            <li class="tab-link active" data-tab="diagnostico">Diagnóstico inmediato</li>
-            <li class="tab-link" data-tab="cuidado">Cuidado Personalizado</li>
-            <li class="tab-link" data-tab="areas">Áreas verdes más sanas</li>
-            <li class="tab-link" data-tab="comunidad">Comunidad verde</li>
-        </ul>
-        <div class="Info-content">
-            <div class="tab-panel active" id="diagnostico">
-                <div class="panel-order">
-                    <h2>Uno de los problemas mas comunes al cuidar plantas es la falta de precision al identificar
-                        plagas o
-                        enfermedades. Muchas veces, las personas recurren a internet, foros o consejos de conocidos,
-                        obteniendo
-                        resultados confusos y hasta contradictorios. Con GreenCare, este proceso se simplifica
-                        radicalmente:
-                        basta con tomar una fotografía de la planta afectada para que la aplicación, mediante visión
-                        artificial,
-                        analice patrones invisibles al ojo humano y ofrezca un diagnostico confiable en segundos. Esto
-                        permite
-                        actuar con rapidez, evitar la propagación de enfermedades y reducir las pérdidas de tiempo,
-                        dinero y
-                        esfuerzo.</h2>
-                    <img src="assets\Images\body1.png" alt="body1">
-                </div>
-            </div>
-
-            <div class="tab-panel" id="cuidado">
-                <div class="panel-order">
-                    <h2>No todas las plantas son iguales, y por eso necesitan atenciones distintas. Un error frecuente
-                        en
-                        jardinería y
-                        mantenimiento de áreas verdes es aplicar soluciones generales sin considerar la especie ni sus
-                        condiciones
-                        específicas. GreenCare busca resolver este problema ofreciendo información detallada y adaptada:
-                        desde la causa
-                        exacta del daño hasta el tratamiento más adecuado y las medidas preventivas que se deben tomar.
-                        De
-                        esta forma, los
-                        usuarios no solo tratan el problema, sino que aprenden a comprenderlo y anticiparse a futuras
-                        complicaciones,
-                        creando un acompañamiento digital que se ajusta a cada tipo de planta.</h2>
-                        <img src="assets\Images\body2.png" alt="body2">
-                </div>
-            </div>
-
-            <div class="tab-panel" id="areas">
-                <div class="panel-order">
-                    <h2>La salud de jardines, parques y áreas verdes urbanas no es solo un tema estético, también
-                        impacta en
-                        la calidad de vida, el bienestar emocional y la sostenibilidad ambiental de una comunidad. Sin
-                        embargo, su mantenimiento suele enfrentar barreras como falta de personal especializado,
-                        presupuestos limitados y detección tardía de plagas o deficiencias. GreenCare ayuda a superar
-                        estos
-                        obstáculos al permitir inspecciones rápidas y diagnósticos inmediatos que previenen daños
-                        mayores.
-                        Con ello, se optimizan recursos, se reducen gastos de reposición y se garantiza que las áreas
-                        verdes
-                        cumplan su función de manera óptima: brindar espacios limpios, saludables y agradables para
-                        todos.</h2>
-                    <img src="assets\Images\body3.png" alt="body3">
-                </div>
-            </div>
-
-            <div class="tab-panel" id="comunidad">
-                <div class="panel-order">
-                    <h2>Cuidar plantas puede parecer una tarea individual, pero en realidad se trata de un esfuerzo
-                        colectivo con gran
-                        potencial de impacto. GreenCare busca ser más que una herramienta digital: aspira a convertirse
-                        en
-                        una comunidad
-                        verde donde los usuarios puedan compartir experiencias, comparar resultados y aprender de otros
-                        cuidadores, sean
-                        aficionados, estudiantes o trabajadores municipales. De esta manera, se genera un espacio de
-                        colaboración que
-                        potencia el aprendizaje mutuo y promueve la conciencia ambiental. Además, este enfoque
-                        comunitario
-                        fortalece el
-                        compromiso de las personas, que no solo mejoran sus plantas, sino que también aportan a un
-                        movimiento más grande en
-                        favor del medio ambiente.</h2>
-                        <img src="assets\Images\body4.png" alt="body4">
-                </div>
-            </div>
-
+        <div class="info">
+            <ul>
+                <li>
+                    <h1>15.000+</h1>
+                    <h2>Registros de plantas en nuestro sistema</h2>
+                </li>
+                <li>
+                    <h1>7.000+</h1>
+                    <h2>Familias lo usan en horticultura ornamental</h2>
+                </li>
+                <li>
+                    <h1>4.000+</h1>
+                    <h2>Participan activamente en la gestión de áreas verdes</h2>
+                </li>
+            </ul>
         </div>
-    </div>
-    <script>
-        const tabs = document.querySelectorAll('.tab-link');
-        const panels = document.querySelectorAll('.tab-panel');
-
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-
-                tabs.forEach(item => item.classList.remove('active'));
-                panels.forEach(panel => panel.classList.remove('active'));
-
-                tab.classList.add('active');
-
-                const targetId = tab.getAttribute('data-tab');
-                const targetPanel = document.getElementById(targetId);
-
-                if (targetPanel) {
-                    targetPanel.classList.add('active');
-                }
-            });
-        });
-    </script>
-    <div class="Info-data">
-        <ul>
-            <li>
-                <h1>57.8 M m<sup>2</sup></h1>
-                <h2>De espacios públicos necesitan conservacion<br>(INEI).</br></h2>
-            </li>
-            <li>
-                <h1>7,000+</h1>
-                <h2>Familias dependen de la horticultura ornamental<br>(MIDAGRI).</br></h2>
-            </li>
-            <li>
-                <h1>54,000+</h1>
-                <h2>Participan activamente en la gestión de áreas verdes<br>(MINEDU).</br></h2>
-            </li>
-        </ul>
     </div>
 </body>
 <footer>
-    <div class="ayuda">
-        <h4>¿Necesita más ayuda?</h4>
-        <ul>
+    <div class="footer-contenedor">
+        <ul class="col">
+            <li><h1>¿Necesitas más ayuda?</h1></li>
+            <li><a href="">Términos de uso</a></li>
+            <li><a href="">Privacidad</a></li>
+            <li><a href="">Preferencia de cookies</a></li>
+            <li><a href="">Información corporativa</a></li>
+        </ul>
+        <ul class="col">
+            <li><h1>Navegación</h1></li>
+            <li><a href="">Inicio</a></li>
+            <li><a href="">Caracteristicas</a></li>
+            <li><a href="">Sobre Nosotros</a></li>
+            <li><a href="">¿Como Funciona?</a></li>
+        </ul>
+
+        <ul class="col">
+            <li><h1>Contáctanos</h1></li>
             <li>
-                Terminos de uso
+                <div class="sub-opciones-3">
+                    <img src="assets/Images/yt-icon.png">
+                    <img src="assets/Images/x-icon.png">
+                    <img src="assets/Images/fb-icon.png">
+                    <img src="assets/Images/ws-icon.png">
+                    <img src="assets/Images/ig-icon.png">
+                </div>
             </li>
-            <li>
-                Privacidad
-            </li>
-            <li>
-                Preferencia de cookies
-            </li>
-            <li>
-                Informacion corporativa
-            </li>
+            <li><h3>@ 2025 GreenCare</h3></li>
         </ul>
     </div>
-    <div class="Navegacion">
-        <h4>Navegacion</h4>
-        <ul>
-            <li>
-                Inicio
-            </li>
-            <li>
-                Sobre Nosotros
-            </li>
-            <li>
-                ¿Como Funciona?
-            </li>
-            <li>
-                Registrate
-            </li>
-        </ul>
-    </div>
-    <div class="contacto">
-        <h4>Contactenos</h4>
-        <ul>
-            <li><img src="assets\Images\yt-icon.png" alt="Logofinal1" class="logofinal"></li>
-            <li><img src="assets\Images\x-icon.png" alt="Logofinal2" class="logofinal"></li>
-            <li><img src="assets\Images\fb-icon.png" alt="Logofinal3" class="logofinal"></li>
-            <li><img src="assets\Images\ws-icon.png" alt="Logofinal4" class="logofinal"></li>
-            <li><img src="assets\Images\ig-icon.png" alt="Logofinal5" class="logofinal"></li>
-        </ul>
-        <h4 class="copyright">@2025 GreenCare</h4>
-    </div>
-    
 </footer>
 
 </html>
