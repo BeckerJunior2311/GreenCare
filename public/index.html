@@ -14,13 +14,13 @@
 <header>
     <img src="assets/Images/GreenCare.png" alt="GreenCareLogo" class="logo">
     <a href="#menu-principal">Inicio</a>
-    <a href="">Caracteristicas</a>
+    <a href="#features">Caracteristicas</a>
     <a href="#Sobre-Nosotros">Sobre Nosotros</a>
-    <a href="">¿Como Funciona?</a>
+    <a href="#como-funciona">¿Como Funciona?</a>
     <div class="header-botones">
-        <button class="login"><img src="assets/Images/earth-icon.png">Iniciar Sesion</button>
+        <button id="login-btn" class="login"><img src="assets/Images/earth-icon.png">Iniciar Sesion</button>
         <img src="assets/Images/Linea.png">
-        <button class="register">Registrarse</button>
+        <button id="register-btn" class="register">Registrarse</button>
     </div>
 </header>
 
@@ -41,7 +41,7 @@
                     <h2>Identifica plagas, enfermedades y necesidades de tu planta en segundos.</h2>
                 </li>
                 <li>
-                    <button>Descárgala ahora</button>
+                    <button id="download-btn">Descárgala ahora</button>
                 </li>
             </ul>
         </div>
@@ -62,6 +62,63 @@
             </ul>
         </div>
     </div>
+    <section id="features" class="features-section">
+        <div class="caracteristicas-titulo animate-on-scroll">
+            <img src="assets/Images/Linea2.png">
+            <h1>Características</h1>
+            <img src="assets/Images/Linea2.png">
+        </div>
+        <h2 class="section-title">Una solución integral para el cuidado de tus plantas</h2>
+        <div class="features-container">
+            <div class="feature-card">
+                <img src="assets/Images/ia-icon.png" alt="Icono IA" class="feature-icon">
+                <h3>Diagnóstico por IA</h3>
+                <p>Detecta enfermedades, plagas y deficiencias nutricionales con solo una foto.</p>
+            </div>
+            <div class="feature-card">
+                <img src="assets/Images/guide-icon.png" alt="Icono Guía" class="feature-icon">
+                <h3>Guía de Tratamientos</h3>
+                <p>Recibe recomendaciones accionables, tanto orgánicas como químicas, para cada problema.</p>
+            </div>
+            <div class="feature-card">
+                <img src="assets/Images/community-icon.png" alt="Icono Comunidad" class="feature-icon">
+                <h3>Comunidad Integrada</h3>
+                <p>Comparte tus experiencias, valida diagnósticos y pide consejos a otros amantes de las plantas.</p>
+            </div>
+            <div class="feature-card">
+                <img src="assets/Images/offline-icon.png" alt="Icono Offline" class="feature-icon">
+                <h3>Funcionalidad Offline</h3>
+                <p>Realiza diagnósticos en campo, incluso sin conexión a internet, y sincroniza después.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="para-profesionales" class="professional-section">
+        <h2 class="section-title">Una Herramienta Potente para Profesionales</h2>
+        <p class="section-subtitle">Optimiza la gestión de parques, jardines y áreas verdes públicas o privadas.</p>
+        <div class="professional-features-container">
+            <div class="professional-feature-card">
+                <img src="assets/Images/dashboard-icon.png" alt="Icono Dashboard" class="professional-feature-icon">
+                <h3>Monitoreo Centralizado</h3>
+                <p>Visualiza el estado de salud de múltiples zonas en un solo panel. Asigna prioridades y gestiona
+                    incidencias de forma eficiente.</p>
+            </div>
+            <div class="professional-feature-card">
+                <img src="assets/Images/geotag-icon.png" alt="Icono Geolocalización" class="professional-feature-icon">
+                <h3>Reportes Geolocalizados</h3>
+                <p>Registra incidencias con fotos y coordenadas GPS, incluso sin conexión. Genera reportes automáticos
+                    para supervisores.</p>
+            </div>
+            <div class="professional-feature-card">
+                <img src="assets/Images/team-icon.png" alt="Icono Equipo" class="professional-feature-icon">
+                <h3>Optimización de Recursos</h3>
+                <p>Aprueba tratamientos digitalmente, monitorea la efectividad y analiza estadísticas para tomar
+                    decisiones basadas en datos.</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="assets/scripts/main.js"></script>
     <div id="Sobre-Nosotros">
         <div class="sobre-nostros-titulo">
             <img src="assets/Images/Linea2.png">
@@ -92,21 +149,133 @@
             <h2>Nuestros pilares</h2>
             <ul>
                 <li>
-                    <h3><img src="assets/Images/shield-line.png"> Ayudamos a detectar problemas en tus plantas antes de que avancen, promoviendo un mantenimiento saludable y sostenible.</h3>
+                    <h3><img src="assets/Images/shield-line.png"> Ayudamos a detectar problemas en tus plantas antes de
+                        que avancen, promoviendo un mantenimiento saludable y sostenible.</h3>
                 </li>
                 <li>
-                    <h3><img src="assets/Images/robot-2-line.png"> Usamos inteligencia artificial y análisis avanzado para ofrecer diagnósticos precisos y recomendaciones confiables.</h3>
+                    <h3><img src="assets/Images/robot-2-line.png"> Usamos inteligencia artificial y análisis avanzado
+                        para ofrecer diagnósticos precisos y recomendaciones confiables.</h3>
                 </li>
                 <li>
-                    <h3><img src="assets/Images/Frame 89.png"><br>Cada usuario recibe orientación adaptada a su necesidad: nivel de experiencia, tipo de planta y contexto ambiental.</h3>
+                    <h3><img src="assets/Images/Frame 89.png"><br>Cada usuario recibe orientación adaptada a su
+                        necesidad: nivel de experiencia, tipo de planta y contexto ambiental.</h3>
                 </li>
                 <li>
-                    <h3><img src="assets/Images/pc-phone.png"> Diseñamos una plataforma disponible en móvil y web para que puedas cuidar tus plantas en casa, trabajo o espacios públicos.</h3>
+                    <h3><img src="assets/Images/pc-phone.png"> Diseñamos una plataforma disponible en móvil y web para
+                        que puedas cuidar tus plantas en casa, trabajo o espacios públicos.</h3>
                 </li>
                 <li>
-                    <h3><img src="assets/Images/plant-line.png"> Fomentamos un espacio donde usuarios, expertos y cuidadores de áreas verdes comparten conocimiento y apoyo mutuo.</h3>
+                    <h3><img src="assets/Images/plant-line.png"> Fomentamos un espacio donde usuarios, expertos y
+                        cuidadores de áreas verdes comparten conocimiento y apoyo mutuo.</h3>
                 </li>
             </ul>
+        </div>
+    </div>
+    <div id="como-funciona">
+        <div class="como-funciona-titulo">
+            <img src="assets/Images/Linea2.png">
+            <h1>¿Cómo Funciona?</h1>
+            <img src="assets/Images/Linea2.png">
+        </div>
+        <div class="diagnostico-pasos">
+            <div class="paso">
+                <img src="assets/Images/3x-take-picture_97570.png" alt="Toma una foto">
+                <h2>1. Toma una foto</h2>
+                <h3>Apunta a la hoja o área afectada y captura una imagen clara.</h3>
+            </div>
+            <div class="paso">
+                <img src="assets/Images/uploadarrow_87531.png" alt="Sube la imagen">
+                <h2>2. Sube la imagen</h2>
+                <h3>Nuestra IA analizará la imagen para identificar el problema.</h3>
+            </div>
+            <div class="paso">
+                <img src="assets/Images/diagnostico.png" alt="Recibe el diagnóstico">
+                <h2>3. Recibe el diagnóstico</h2>
+                <h3>Obtén un resultado detallado y recomendaciones al instante.</h3>
+            </div>
+        </div>
+        <div class="feature-showcase">
+            <div class="feature-description">
+                <h2>Registra y gestiona tus plantas</h2>
+                <p>Añade tus plantas a tu colección personal con su nombre, especie y una foto. Haz un seguimiento de su
+                    salud y evolución desde un solo lugar.</p>
+                <div id="registro-error" class="registro-resultado error" style="display: none;">
+                    <img src="assets/Images/close-circle-line.png">
+                    <span>Error: Debes completar todos los campos para guardar.</span>
+                </div>
+            </div>
+            <div class="feature-mockup registro">
+                <div class="mockup-header">
+                    <h3>Agregar Nueva Planta</h3>
+                </div>
+                <div class="mockup-content">
+                    <label for="nombre-planta">Nombre</label>
+                    <input type="text" id="nombre-planta" value="Monstera de Mamá">
+                    <label for="especie-planta">Especie</label>
+                    <input type="text" id="especie-planta" value="Monstera Deliciosa">
+                    <button class="upload-btn">Adjuntar Foto</button>
+                    <button class="save-btn">Guardar</button>
+                </div>
+            </div>
+            <div id="planta-registrada" class="feature-mockup planta-card" style="display: none;">
+                <img src="assets/Images/monstera.png" class="planta-foto">
+                <div class="planta-info">
+                    <h4>Monstera de Mamá</h4>
+                    <p>Monstera Deliciosa</p>
+                </div>
+                <div class="planta-status">
+                    <img src="assets/Images/check-double-line.png">
+                    <span>Saludable</span>
+                </div>
+            </div>
+        </div>
+        <div class="diagnostico-resultados">
+            <div class="diagnostico-controles">
+                <button id="analizar-exito-btn">Simular Análisis Exitoso</button>
+                <button id="analizar-fallido-btn">Simular Análisis Fallido</button>
+            </div>
+
+            <div id="resultado-diagnostico" class="resultado-card exito" style="display: none;">
+                <div class="resultado-header">
+                    <img src="assets/Images/check-double-line.png">
+                    <h2>Diagnóstico: Roya (Hongo)</h2>
+                </div>
+                <div class="recomendacion">
+                    <p>Se ha detectado la presencia del hongo Roya con un <strong>95% de precisión.</strong></p>
+                    <h4>Recomendaciones de Tratamiento</h4>
+                    <p>Abre el detalle para ver el tratamiento sugerido, la dosis y los cuidados preventivos.</p>
+                </div>
+            </div>
+            <div id="resultado-tratamiento" class="resultado-card exito" style="display: none;">
+                <div class="resultado-header">
+                    <img src="assets/Images/health-book-line.png">
+                    <h2>Tratamiento Sugerido</h2>
+                </div>
+                <div class="recomendacion">
+                    <h4>Dosis</h4>
+                    <p>Para fungicidas comerciales, seguir las instrucciones del envase. Para la solución casera,
+                        mezclar 1 cucharada de bicarbonato en 1 litro de agua con unas gotas de jabón.</p>
+                    <h4>Cuidados Preventivos</h4>
+                    <p>Asegurar buena circulación de aire, evitar el exceso de humedad y podar las partes muy afectadas.
+                    </p>
+                </div>
+            </div>
+            <div id="resultado-error" class="resultado-card error" style="display: none; flex-basis: 92%;">
+                <div class="resultado-header">
+                    <img src="assets/Images/close-circle-line.png">
+                    <h2>Análisis Fallido</h2>
+                </div>
+                <p>La imagen no cumple los requisitos. Asegúrate de que el formato sea JPG o PNG y que la imagen sea
+                    nítida.</p>
+            </div>
+        </div>
+    </div>
+    <div id="feature-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span id="close-modal-btn" class="close-btn">&times;</span>
+            <h2>¡Próximamente!</h2>
+            <p>Estamos trabajando para traer esta funcionalidad lo antes posible. ¡Gracias por tu interés en GreenCare!
+            </p>
         </div>
     </div>
 </body>
@@ -125,10 +294,10 @@
             <li>
                 <h1>Navegación</h1>
             </li>
-            <li><a href="">Inicio</a></li>
-            <li><a href="">Caracteristicas</a></li>
-            <li><a href="">Sobre Nosotros</a></li>
-            <li><a href="">¿Como Funciona?</a></li>
+            <li><a href="#menu-principal">Inicio</a></li>
+            <li><a href="#features">Caracteristicas</a></li>
+            <li><a href="#Sobre-Nosotros">Sobre Nosotros</a></li>
+            <li><a href="#como-funciona">¿Como Funciona?</a></li>
         </ul>
 
         <ul class="col">
