@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenCare - Mis Plantas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles/dashboard.css">
+    <link rel="stylesheet" href="assets/styles/mis-plantas.css">
+</head>
+
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <img src="assets/Images/GreenCare.png" alt="GreenCare Logo" class="sidebar-logo">
+            <button class="sidebar-toggle" id="sidebar-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="Dashboard.html" class="nav-item">
+                <span class="nav-icon">📊</span>
+                <span class="nav-text">Dashboard</span>
+            </a>
+            <a href="mis-plantas.html" class="nav-item active">
+                <span class="nav-icon">🌿</span>
+                <span class="nav-text">Mis Plantas</span>
+            </a>
+            <a href="diagnostico.html" class="nav-item">
+                <span class="nav-icon">🔍</span>
+                <span class="nav-text">Diagnóstico</span>
+            </a>
+            <a href="#comunidad" class="nav-item">
+                <span class="nav-icon">👥</span>
+                <span class="nav-text">Comunidad</span>
+            </a>
+            <a href="#notificaciones" class="nav-item">
+                <span class="nav-icon">🔔</span>
+                <span class="nav-text">Notificaciones</span>
+                <span class="notification-badge">3</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="#perfil" class="nav-item">
+                <span class="nav-icon">⚙️</span>
+                <span class="nav-text">Configuración</span>
+            </a>
+            <a href="Index.html" class="nav-item logout">
+                <span class="nav-icon">🚪</span>
+                <span class="nav-text">Cerrar Sesión</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Bar -->
+        <header class="topbar">
+            <div class="topbar-left">
+                <h1 class="page-title">Mis Plantas</h1>
+                <p class="page-subtitle">Gestiona tu colección de plantas</p>
+            </div>
+            <div class="topbar-right">
+                <div class="search-box">
+                    <input type="text" id="search-plants" placeholder="Buscar por nombre o especie...">
+                    <span class="search-icon">🔍</span>
+                </div>
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=Usuario&background=01C48E&color=fff" alt="Usuario"
+                        class="user-avatar">
+                    <span class="user-name">Usuario</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Plantas Content -->
+        <div class="plantas-container">
+            <!-- Filters Bar -->
+            <section class="filters-bar">
+                <div class="filter-group">
+                    <button class="filter-btn active" data-filter="all">
+                        <span>Todas</span>
+                        <span class="count">12</span>
+                    </button>
+                    <button class="filter-btn" data-filter="healthy">
+                        <span>✅ Saludables</span>
+                        <span class="count">8</span>
+                    </button>
+                    <button class="filter-btn" data-filter="warning">
+                        <span>⚠️ Atención</span>
+                        <span class="count">3</span>
+                    </button>
+                    <button class="filter-btn" data-filter="critical">
+                        <span>🔴 Crítico</span>
+                        <span class="count">1</span>
+                    </button>
+                </div>
+                <div class="view-controls">
+                    <button class="view-btn active" data-view="grid">
+                        <span>⊞</span> Grid
+                    </button>
+                    <button class="view-btn" data-view="list">
+                        <span>☰</span> Lista
+                    </button>
+                    <button class="btn-add-plant" id="add-plant-btn">
+                        <span>+</span> Nueva Planta
+                    </button>
+                </div>
+            </section>
+
+            <!-- Plants Grid -->
+            <section class="plants-grid" id="plants-grid">
+                <!-- Plant Card 1 -->
+                <div class="plant-card" data-status="healthy">
+                    <div class="plant-image">
+                        <img src="assets/Images/imagen1.png" alt="Suculenta">
+                        <span class="status-badge healthy">Saludable</span>
+                    </div>
+                    <div class="plant-info">
+                        <h3>Echeveria Elegans</h3>
+                        <p class="plant-type">🌵 Suculenta</p>
+                        <div class="plant-stats">
+                            <span class="stat">💧 Regar en 2 días</span>
+                            <span class="stat">📅 Registrada hace 3 meses</span>
+                        </div>
+                    </div>
+                    <div class="plant-actions">
+                        <button class="action-icon" title="Ver detalles">👁️</button>
+                        <button class="action-icon" title="Diagnosticar">🔍</button>
+                        <button class="action-icon" title="Editar">✏️</button>
+                        <button class="action-icon delete" title="Eliminar">🗑️</button>
+                    </div>
+                </div>
+
+                <!-- Plant Card 2 -->
+                <div class="plant-card" data-status="warning">
+                    <div class="plant-image">
+                        <img src="assets/Images/imagen2.png" alt="Ficus">
+                        <span class="status-badge warning">Requiere atención</span>
+                    </div>
+                    <div class="plant-info">
+                        <h3>Ficus Lyrata</h3>
+                        <p class="plant-type">🌳 Árbol interior</p>
+                        <div class="plant-stats">
+                            <span class="stat alert">⚠️ Hojas amarillas detectadas</span>
+                            <span class="stat">📅 Registrada hace 2 meses</span>
+                        </div>
+                    </div>
+                    <div class="plant-actions">
+                        <button class="action-icon" title="Ver detalles">👁️</button>
+                        <button class="action-icon" title="Diagnosticar">🔍</button>
+                        <button class="action-icon" title="Editar">✏️</button>
+                        <button class="action-icon delete" title="Eliminar">🗑️</button>
+                    </div>
+                </div>
+
+                <!-- Plant Card 3 -->
+                <div class="plant-card" data-status="healthy">
+                    <div class="plant-image">
+                        <img src="assets/Images/imagen3.png" alt="Monstera">
+                        <span class="status-badge healthy">Saludable</span>
+                    </div>
+                    <div class="plant-info">
+                        <h3>Monstera Deliciosa</h3>
+                        <p class="plant-type">🍃 Tropical</p>
+                        <div class="plant-stats">
+                            <span class="stat">💧 Regar mañana</span>
+                            <span class="stat">📅 Registrada hace 5 meses</span>
+                        </div>
+                    </div>
+                    <div class="plant-actions">
+                        <button class="action-icon" title="Ver detalles">👁️</button>
+                        <button class="action-icon" title="Diagnosticar">🔍</button>
+                        <button class="action-icon" title="Editar">✏️</button>
+                        <button class="action-icon delete" title="Eliminar">🗑️</button>
+                    </div>
+                </div>
+
+                <!-- Plant Card 4 -->
+                <div class="plant-card" data-status="healthy">
+                    <div class="plant-image">
+                        <img src="assets/Images/plantas.png" alt="Pothos">
+                        <span class="status-badge healthy">Saludable</span>
+                    </div>
+                    <div class="plant-info">
+                        <h3>Pothos Dorado</h3>
+                        <p class="plant-type">🌿 Enredadera</p>
+                        <div class="plant-stats">
+                            <span class="stat">💧 Riego hoy</span>
+                            <span class="stat">📅 Registrada hace 1 mes</span>
+                        </div>
+                    </div>
+                    <div class="plant-actions">
+                        <button class="action-icon" title="Ver detalles">👁️</button>
+                        <button class="action-icon" title="Diagnosticar">🔍</button>
+                        <button class="action-icon" title="Editar">✏️</button>
+                        <button class="action-icon delete" title="Eliminar">🗑️</button>
+                    </div>
+                </div>
+
+                <!-- Placeholder for more plants -->
+                <div class="plant-card placeholder">
+                    <div class="placeholder-content">
+                        <span class="placeholder-icon">🌱</span>
+                        <p>Agrega más plantas a tu colección</p>
+                        <button class="btn-secondary" onclick="document.getElementById('add-plant-btn').click()">
+                            Agregar Planta
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Empty State -->
+            <div class="empty-state" id="empty-state" style="display: none;">
+                <img src="assets/Images/plantas.png" alt="Sin plantas" class="empty-icon">
+                <h2>No hay plantas con ese filtro</h2>
+                <p>Intenta cambiar los criterios de búsqueda</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Add/Edit Plant Modal -->
+    <div class="modal" id="plant-modal">
+        <div class="modal-overlay" id="modal-overlay"></div>
+        <div class="modal-content large">
+            <button class="modal-close" id="close-modal">×</button>
+            <h2 id="modal-title">Agregar Nueva Planta</h2>
+
+            <form id="plant-form" class="plant-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="plant-name">Nombre de la planta *</label>
+                        <input type="text" id="plant-name" placeholder="Ej: Mi Monstera" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="plant-species">Especie *</label>
+                        <input type="text" id="plant-species" placeholder="Ej: Monstera Deliciosa" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="plant-category">Categoría</label>
+                    <select id="plant-category">
+                        <option value="">Seleccionar categoría</option>
+                        <option value="suculenta">🌵 Suculenta</option>
+                        <option value="tropical">🍃 Tropical</option>
+                        <option value="arbol">🌳 Árbol interior</option>
+                        <option value="enredadera">🌿 Enredadera</option>
+                        <option value="cactus">🌵 Cactus</option>
+                        <option value="otra">🌱 Otra</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Foto de la planta</label>
+                    <div class="file-upload" id="file-upload">
+                        <input type="file" id="plant-image" accept="image/*" hidden>
+                        <div class="upload-placeholder" id="upload-placeholder">
+                            <span class="upload-icon">📸</span>
+                            <p>Arrastra una imagen aquí o haz clic para seleccionar</p>
+                            <span class="upload-hint">JPG, PNG o WEBP (Máx. 5MB)</span>
+                        </div>
+                        <div class="image-preview" id="image-preview" style="display: none;">
+                            <img id="preview-img" src="" alt="Preview">
+                            <button type="button" class="remove-image" id="remove-image">×</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="plant-notes">Notas (opcional)</label>
+                    <textarea id="plant-notes" rows="3" placeholder="Agrega notas sobre tu planta..."></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" id="cancel-btn">Cancelar</button>
+                    <button type="submit" class="btn-primary">
+                        <span id="save-text">Guardar Planta</span>
+                        <span id="save-loader" class="save-loader" style="display: none;">●●●</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-nav">
+        <a href="Dashboard.html" class="mobile-nav-item">
+            <span class="mobile-icon">📊</span>
+            <span class="mobile-label">Inicio</span>
+        </a>
+        <a href="mis-plantas.html" class="mobile-nav-item active">
+            <span class="mobile-icon">🌿</span>
+            <span class="mobile-label">Plantas</span>
+        </a>
+        <a href="diagnostico.html" class="mobile-nav-item floating">
+            <span class="mobile-icon">📸</span>
+        </a>
+        <a href="#comunidad" class="mobile-nav-item">
+            <span class="mobile-icon">👥</span>
+            <span class="mobile-label">Comunidad</span>
+        </a>
+        <a href="#perfil" class="mobile-nav-item">
+            <span class="mobile-icon">👤</span>
+            <span class="mobile-label">Perfil</span>
+        </a>
+    </nav>
+
+    <script src="assets/scripts/dashboard.js"></script>
+    <script src="assets/scripts/mis-plantas.js"></script>
+</body>
+
+</html>

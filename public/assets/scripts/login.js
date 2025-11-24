@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (passwordInput) {
         passwordInput.addEventListener('blur', () => {
             if (passwordInput.value === '') {
-                showError(passwordInput, 'La contraseña es requerida');
+                showError(passwordInput, 'La contraseña es requer ida');
             } else if (!validatePassword(passwordInput.value)) {
                 showError(passwordInput, 'La contraseña debe tener al menos 6 caracteres');
             } else {
@@ -134,9 +134,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (successModal) {
                     successModal.style.display = 'flex';
 
-                    // Redirect after 2 seconds
+                    // Redirect to dashboard after 2 seconds
                     setTimeout(() => {
-                        window.location.href = '../Index.html';
+                        window.location.href = 'Dashboard.html';
                     }, 2000);
                 }
             } catch (error) {
