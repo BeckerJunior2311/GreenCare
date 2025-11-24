@@ -55,11 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const modal = document.getElementById('feature-modal');
     const closeModalBtn = document.getElementById('close-modal-btn');
-    const openModalButtons = [
-        document.getElementById('login-btn'),
-        document.getElementById('register-btn'),
-        document.getElementById('download-btn')
-    ];
+    const loginBtn = document.getElementById('login-btn');
+    const registerBtn = document.getElementById('register-btn');
+    const downloadBtn = document.getElementById('download-btn');
 
     const openModal = () => {
         if (modal) modal.style.display = 'block';
@@ -69,9 +67,22 @@ document.addEventListener('DOMContentLoaded', () => {
         if (modal) modal.style.display = 'none';
     }
 
-    openModalButtons.forEach(btn => {
-        if (btn) btn.addEventListener('click', openModal);
-    });
+    // Login button redirects to login page
+    if (loginBtn) {
+        loginBtn.addEventListener('click', () => {
+            window.location.href = 'Login.html';
+        });
+    }
+
+    // Register button redirects to register page
+    if (registerBtn) {
+        registerBtn.addEventListener('click', () => {
+            window.location.href = 'Register.html';
+        });
+    }
+
+    // Download button shows "coming soon" modal
+    if (downloadBtn) downloadBtn.addEventListener('click', openModal);
 
     if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
     window.addEventListener('click', (event) => { if (event.target == modal) closeModal(); });

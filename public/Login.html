@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenCare - Iniciar Sesión</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles/login.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <!-- Left side - Branding -->
+        <div class="login-brand">
+            <div class="brand-content">
+                <img src="assets/Images/GreenCare.png" alt="GreenCare Logo" class="brand-logo">
+                <h1>Bienvenido a GreenCare</h1>
+                <p>Cuida tus plantas con inteligencia artificial</p>
+                <div class="brand-features">
+                    <div class="feature-item">
+                        <span class="icon">🌿</span>
+                        <span>Diagnóstico IA</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="icon">📊</span>
+                        <span>Seguimiento</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="icon">👥</span>
+                        <span>Comunidad</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right side - Login Form -->
+        <div class="login-form-section">
+            <div class="form-wrapper">
+                <div class="form-header">
+                    <h2>Iniciar Sesión</h2>
+                    <p>Ingresa tus credenciales para continuar</p>
+                </div>
+
+                <form id="login-form" class="login-form">
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <div class="input-wrapper">
+                            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                            <span class="input-icon">📧</span>
+                        </div>
+                        <span class="error-message" id="email-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <div class="input-wrapper">
+                            <input type="password" id="password" name="password" placeholder="••••••••" required>
+                            <span class="input-icon toggle-password" id="toggle-password">👀</span>
+                        </div>
+                        <span class="error-message" id="password-error"></span>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="remember-me">
+                            <span class="checkmark"></span>
+                            <span class="checkbox-label">Recordarme</span>
+                        </label>
+                        <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                    </div>
+
+                    <button type="submit" class="btn-login">
+                        <span class="btn-text">Iniciar Sesión</span>
+                        <span class="btn-loader" style="display: none;">
+                            <span class="spinner"></span>
+                        </span>
+                    </button>
+
+                    <div class="divider">
+                        <span>O continúa con</span>
+                    </div>
+
+                    <div class="social-login">
+                        <button type="button" class="btn-social btn-google">
+                            <img src="https://www.google.com/favicon.ico" alt="Google">
+                            Google
+                        </button>
+                        <button type="button" class="btn-social btn-facebook">
+                            <span class="fb-icon">f</span>
+                            Facebook
+                        </button>
+                    </div>
+
+                    <div class="signup-link">
+                        ¿No tienes una cuenta? <a href="Register.html">Regístrate aquí</a>
+                    </div>
+                </form>
+
+                <div class="back-home">
+                    <a href="Index.html">← Volver al inicio</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal" style="display: none;">
+        <div class="modal-content success">
+            <div class="modal-icon">✓</div>
+            <h3>¡Bienvenido!</h3>
+            <p>Has iniciado sesión correctamente</p>
+        </div>
+    </div>
+
+    <script src="assets/scripts/login.js"></script>
+</body>
+
+</html>
