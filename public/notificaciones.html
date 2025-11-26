@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenCare - Notificaciones</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles/dashboard.css">
+    <link rel="stylesheet" href="assets/styles/notificaciones.css">
+</head>
+
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <img src="assets/Images/GreenCare.png" alt="GreenCare Logo" class="sidebar-logo">
+            <button class="sidebar-toggle" id="sidebar-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="Dashboard.html" class="nav-item">
+                <span class="nav-icon">📊</span>
+                <span class="nav-text">Dashboard</span>
+            </a>
+            <a href="mis-plantas.html" class="nav-item">
+                <span class="nav-icon">🌿</span>
+                <span class="nav-text">Mis Plantas</span>
+            </a>
+            <a href="diagnostico.html" class="nav-item">
+                <span class="nav-icon">🔍</span>
+                <span class="nav-text">Diagnóstico</span>
+            </a>
+            <a href="comunidad.html" class="nav-item">
+                <span class="nav-icon">👥</span>
+                <span class="nav-text">Comunidad</span>
+            </a>
+            <a href="notificaciones.html" class="nav-item active">
+                <span class="nav-icon">🔔</span>
+                <span class="nav-text">Notificaciones</span>
+                <span class="notification-badge">3</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="#perfil" class="nav-item">
+                <span class="nav-icon">⚙️</span>
+                <span class="nav-text">Configuración</span>
+            </a>
+            <a href="Index.html" class="nav-item logout">
+                <span class="nav-icon">🚪</span>
+                <span class="nav-text">Cerrar Sesión</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Bar -->
+        <header class="topbar">
+            <div class="topbar-left">
+                <h1 class="page-title">Notificaciones</h1>
+                <p class="page-subtitle">Centro de alertas y recordatorios</p>
+            </div>
+            <div class="topbar-right">
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=Usuario&background=01C48E&color=fff" alt="Usuario"
+                        class="user-avatar">
+                    <span class="user-name">Usuario</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Notifications Content -->
+        <div class="notifications-container">
+            <!-- Filter Bar -->
+            <section class="filter-bar">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Todas <span class="count">8</span></button>
+                    <button class="filter-btn" data-filter="unread">No leídas <span class="count">3</span></button>
+                    <button class="filter-btn" data-filter="alerts">Alertas <span class="count">2</span></button>
+                    <button class="filter-btn" data-filter="reminders">Recordatorios <span
+                            class="count">4</span></button>
+                    <button class="filter-btn" data-filter="updates">Actualizaciones <span
+                            class="count">2</span></button>
+                </div>
+                <div class="actions">
+                    <button class="btn-secondary" id="mark-all-read">Marcar todas como leídas</button>
+                    <button class="btn-secondary" id="settings-btn">⚙️ Configuración</button>
+                </div>
+            </section>
+
+            <!-- Notifications List -->
+            <section class="notifications-list">
+                <!-- Unread Notification -->
+                <div class="notification-item unread" data-type="alerts">
+                    <div class="notification-icon alert">⚠️</div>
+                    <div class="notification-content">
+                        <h4>Riego urgente necesario</h4>
+                        <p>Tu planta "Ficus Lyrata" necesita agua inmediatamente. La tierra está muy seca.</p>
+                        <span class="notification-time">Hace 10 minutos</span>
+                    </div>
+                    <div class="notification-actions">
+                        <button class="btn-icon" title="Marcar como leída">✓</button>
+                        <button class="btn-icon" title="Ver planta">👁️</button>
+                        <button class="btn-icon delete" title="Eliminar">🗑️</button>
+                    </div>
+                </div>
+
+                <!-- Reminder Notification -->
+                <div class="notification-item unread" data-type="reminders">
+                    <div class="notification-icon reminder">💧</div>
+                    <div class="notification-content">
+                        <h4>Recordatorio de riego</h4>
+                        <p>Es hora de regar tu "Monstera Deliciosa" según el calendario programado.</p>
+                        <span class="notification-time">Hace 1 hora</span>
+                    </div>
+                    <div class="notification-actions">
+                        <button class="btn-icon" title="Marcar como leída">✓</button>
+                        <button class="btn-icon" title="Completar tarea">✅</button>
+                        <button class="btn-icon delete" title="Eliminar">🗑️</button>
+                    </div>
+                </div>
+
+                <!-- Update Notification -->
+                <div class="notification-item unread" data-type="updates">
+                    <div class="notification-icon update">🌱</div>
+                    <div class="notification-content">
+                        <h4>Nuevo diagnóstico completado</h4>
+                        <p>El análisis de tu "Suculenta Echeveria" ha finalizado. Resultado: Saludable ✓</p>
+                        <span class="notification-time">Hace 3 horas</span>
+                    </div>
+                    <div class="notification-actions">
+                        <button class="btn-icon" title="Marcar como leída">✓</button>
+                        <button class="btn-icon" title="Ver resultado">📋</button>
+                        <button class="btn-icon delete" title="Eliminar">🗑️</button>
+                    </div>
+                </div>
+
+                <!-- Read Reminder -->
+                <div class="notification-item read" data-type="reminders">
+                    <div class="notification-icon reminder">🌻</div>
+                    <div class="notification-content">
+                        <h4>Fertilización programada</h4>
+                        <p>Aplicar fertilizante a tus suculentas el próximo sábado.</p>
+                        <span class="notification-time">Hace 1 día</span>
+                    </div>
+                    <div class="notification-actions">
+                        <button class="btn-icon" title="Ver detalles">👁️</button>
+                        <button class="btn-icon delete" title="Eliminar">🗑️</button>
+                    </div>
+                </div>
+
+                <!-- Read Alert -->
+                <div class="notification-item read" data-type="alerts">
+                    <div class="notification-icon alert">🐛</div>
+                    <div class="notification-content">
+                        <h4>Posible plaga detectada</h4>
+                        <p>Se detectaron signos de cochinillas en "Pothos Dorado". Revisa la planta pronto.</p>
+                        <span class="notification-time">Hace 2 días</span>
+                    </div>
+                    <div class="notification-actions">
+                        <button class="btn-icon" title="Ver planta">👁️</button>
+                        <button class="btn-icon delete" title="Eliminar">🗑️</button>
+                    </div>
+                </div>
+
+                <!-- Read Update -->
+                <div class="notification-item read" data-type="updates">
+                    <div class="notification-icon update">✨</div>
+                    <div class="notification-content">
+                        <h4>Nueva función disponible</h4>
+                        <p>Ahora puedes compartir tus plantas en la comunidad de GreenCare.</p>
+                        <span class="notification-time">Hace 3 días</span>
+                    </div>
+                    <div class="notification-actions">
+                        <button class="btn-icon" title="Explorar">🚀</button>
+                        <button class="btn-icon delete" title="Eliminar">🗑️</button>
+                    </div>
+                </div>
+
+                <!-- Placeholder for more -->
+                <div class="notification-item read" data-type="reminders">
+                    <div class="notification-icon reminder">📅</div>
+                    <div class="notification-content">
+                        <h4>Revisa tus plantas mensualmente</h4>
+                        <p>Es momento de hacer una inspección general de todas tus plantas.</p>
+                        <span class="notification-time">Hace 1 semana</span>
+                    </div>
+                    <div class="notification-actions">
+                        <button class="btn-icon delete" title="Eliminar">🗑️</button>
+                    </div>
+                </div>
+
+                <div class="notification-item read" data-type="reminders">
+                    <div class="notification-icon reminder">✂️</div>
+                    <div class="notification-content">
+                        <h4>Poda recomendada</h4>
+                        <p>Tu "Ficus" ha crecido bastante. Considera hacer una poda ligera.</p>
+                        <span class="notification-time">Hace 2 semanas</span>
+                    </div>
+                    <div class="notification-actions">
+                        <button class="btn-icon delete" title="Eliminar">🗑️</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Empty State (hidden by default) -->
+            <div class="empty-state" id="empty-state" style="display: none;">
+                <div class="empty-icon">🔔</div>
+                <h3>No hay notificaciones</h3>
+                <p>Todas tus notificaciones están al día</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Settings Modal -->
+    <div class="modal" id="settings-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="close-settings">×</button>
+            <h2>Configuración de Notificaciones</h2>
+
+            <div class="settings-section">
+                <h3>Tipo de Notificaciones</h3>
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" checked>
+                        <span>Alertas de plantas</span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" checked>
+                        <span>Recordatorios de cuidado</span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" checked>
+                        <span>Diagnósticos completados</span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox">
+                        <span>Actualizaciones de la app</span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox">
+                        <span>Mensajes de la comunidad</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h3>Frecuencia</h3>
+                <div class="setting-item">
+                    <label>
+                        <input type="radio" name="frequency" value="instant" checked>
+                        <span>Notificaciones instantáneas</span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label>
+                        <input type="radio" name="frequency" value="daily">
+                        <span>Resumen diario (8:00 AM)</span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label>
+                        <input type="radio" name="frequency" value="weekly">
+                        <span>Resumen semanal (Lunes)</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="modal-actions">
+                <button class="btn-secondary" id="cancel-settings">Cancelar</button>
+                <button class="btn-primary" id="save-settings">Guardar Cambios</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-nav">
+        <a href="Dashboard.html" class="mobile-nav-item">
+            <span class="mobile-icon">📊</span>
+            <span class="mobile-label">Inicio</span>
+        </a>
+        <a href="mis-plantas.html" class="mobile-nav-item">
+            <span class="mobile-icon">🌿</span>
+            <span class="mobile-label">Plantas</span>
+        </a>
+        <a href="diagnostico.html" class="mobile-nav-item floating">
+            <span class="mobile-icon">📸</span>
+        </a>
+        <a href="comunidad.html" class="mobile-nav-item">
+            <span class="mobile-icon">👥</span>
+            <span class="mobile-label">Comunidad</span>
+        </a>
+        <a href="notificaciones.html" class="mobile-nav-item active">
+            <span class="mobile-icon">🔔</span>
+            <span class="mobile-label">Alertas</span>
+        </a>
+    </nav>
+
+    <script src="assets/scripts/dashboard.js"></script>
+    <script src="assets/scripts/notificaciones.js"></script>
+</body>
+
+</html>

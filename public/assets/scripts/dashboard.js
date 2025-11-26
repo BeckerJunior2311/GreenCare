@@ -29,52 +29,23 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileNavItems.forEach(item => item.classList.remove('active'));
     };
 
-    // Add click handlers to nav items
+    // Add click handlers to nav items - SIMPLIFIED VERSION
+    // Just close mobile sidebar, let links work naturally
     navItems.forEach(item => {
         item.addEventListener('click', (e) => {
-            // Allow logout and valid links to work normally
-            if (item.classList.contains('logout')) return;
-
-            const href = item.getAttribute('href');
-
-            // Only prevent default for hash links or empty hrefs
-            if (!href || href === '#' || href.startsWith('#')) {
-                e.preventDefault();
-                clearActiveStates();
-                item.classList.add('active');
-
-                const section = href ? href.substring(1) : '';
-                console.log(`Navigating to section: ${section}`);
-            }
-            // For real page links (.html), let them navigate normally
-            else if (href.endsWith('.html')) {
-                // Navigation will happen naturally, don't prevent it
-                console.log(`Navigating to page: ${href}`);
-            }
-
-            // Close mobile sidebar
+            // Close mobile sidebar when clicking any nav item
             if (window.innerWidth <= 1024) {
                 sidebar.classList.remove('active');
             }
         });
     });
 
-    // Mobile nav items
+    // Mobile nav items - also simplified
     mobileNavItems.forEach(item => {
         item.addEventListener('click', (e) => {
-            const href = item.getAttribute('href');
-
-            // Only prevent default for hash links
-            if (!href || href === '#' || href.startsWith('#')) {
-                e.preventDefault();
-                clearActiveStates();
-                item.classList.add('active');
-                const section = href ? href.substring(1) : '';
-                console.log(`Mobile navigation to section: ${section}`);
-            }
-            // For real page links, let them navigate normally
-            else if (href.endsWith('.html')) {
-                console.log(`Mobile navigating to page: ${href}`);
+            // Just close sidebar if needed, let navigation work
+            if (window.innerWidth <= 1024) {
+                sidebar.classList.remove('active');
             }
         });
     });

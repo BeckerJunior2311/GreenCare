@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenCare - Comunidad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles/dashboard.css">
+    <link rel="stylesheet" href="assets/styles/comunidad.css">
+</head>
+
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <img src="assets/Images/GreenCare.png" alt="GreenCare Logo" class="sidebar-logo">
+            <button class="sidebar-toggle" id="sidebar-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="Dashboard.html" class="nav-item">
+                <span class="nav-icon">📊</span>
+                <span class="nav-text">Dashboard</span>
+            </a>
+            <a href="mis-plantas.html" class="nav-item">
+                <span class="nav-icon">🌿</span>
+                <span class="nav-text">Mis Plantas</span>
+            </a>
+            <a href="diagnostico.html" class="nav-item">
+                <span class="nav-icon">🔍</span>
+                <span class="nav-text">Diagnóstico</span>
+            </a>
+            <a href="comunidad.html" class="nav-item active">
+                <span class="nav-icon">👥</span>
+                <span class="nav-text">Comunidad</span>
+            </a>
+            <a href="notificaciones.html" class="nav-item">
+                <span class="nav-icon">🔔</span>
+                <span class="nav-text">Notificaciones</span>
+                <span class="notification-badge">3</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="#perfil" class="nav-item">
+                <span class="nav-icon">⚙️</span>
+                <span class="nav-text">Configuración</span>
+            </a>
+            <a href="Index.html" class="nav-item logout">
+                <span class="nav-icon">🚪</span>
+                <span class="nav-text">Cerrar Sesión</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Bar -->
+        <header class="topbar">
+            <div class="topbar-left">
+                <h1 class="page-title">Comunidad GreenCare</h1>
+                <p class="page-subtitle">Comparte y aprende con otros amantes de las plantas</p>
+            </div>
+            <div class="topbar-right">
+                <button class="btn-primary" id="new-post-btn">
+                    ✏️ Nueva Publicación
+                </button>
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=Usuario&background=01C48E&color=fff" alt="Usuario"
+                        class="user-avatar">
+                    <span class="user-name">Usuario</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Community Content -->
+        <div class="community-container">
+            <!-- Filter Bar -->
+            <section class="category-filter">
+                <button class="category-btn active" data-category="all">🌐 Todas</button>
+                <button class="category-btn" data-category="plagas">🐛 Plagas</button>
+                <button class="category-btn" data-category="enfermedades">🦠 Enfermedades</button>
+                <button class="category-btn" data-category="cuidados">💚 Cuidados</button>
+                <button class="category-btn" data-category="consejos">💡 Consejos</button>
+                <button class="category-btn" data-category="otro">📝 Otro</button>
+            </section>
+
+            <!-- Posts Feed -->
+            <div class="posts-grid">
+                <!-- Sidebar Stats -->
+                <aside class="community-sidebar">
+                    <div class="card stats-card">
+                        <h3>Estadísticas</h3>
+                        <div class="stat-item">
+                            <span class="stat-number">1,234</span>
+                            <span class="stat-label">Miembros activos</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">456</span>
+                            <span class="stat-label">Publicaciones</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2,890</span>
+                            <span class="stat-label">Consejos compartidos</span>
+                        </div>
+                    </div>
+
+                    <div class="card trending-card">
+                        <h3>🔥 Temas Populares</h3>
+                        <div class="trending-list">
+                            <div class="trending-item">
+                                <span class="tag">#RiegoCorrecto</span>
+                                <span class="count">145</span>
+                            </div>
+                            <div class="trending-item">
+                                <span class="tag">#SuculentasLove</span>
+                                <span class="count">98</span>
+                            </div>
+                            <div class="trending-item">
+                                <span class="tag">#PlagasNaturales</span>
+                                <span class="count">67</span>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Main Feed -->
+                <div class="posts-feed">
+                    <!-- Post 1 -->
+                    <article class="post-card" data-category="cuidados">
+                        <div class="post-header">
+                            <img src="https://ui-avatars.com/api/?name=Maria+Garcia&background=4CAF50&color=fff"
+                                class="post-author-avatar">
+                            <div class="post-author-info">
+                                <h4>María García</h4>
+                                <span class="post-time">Hace 2 horas</span>
+                            </div>
+                            <span class="category-badge cuidados">💚 Cuidados</span>
+                        </div>
+                        <div class="post-content">
+                            <h3>¿Cómo regar correctamente las suculentas?</h3>
+                            <p>He notado que muchos principiantes tienen problemas con el riego de suculentas. Aquí les
+                                comparto mi técnica que ha funcionado maravillosamente...</p>
+                            <div class="post-images">
+                                <img src="assets/Images/imagen1.png" alt="Suculenta">
+                            </div>
+                        </div>
+                        <div class="post-stats">
+                            <button class="stat-btn">
+                                <span>👍</span>
+                                <span>24</span>
+                            </button>
+                            <button class="stat-btn">
+                                <span>💬</span>
+                                <span>12</span>
+                            </button>
+                            <button class="stat-btn">
+                                <span>🔖</span>
+                                <span>Guardar</span>
+                            </button>
+                            <button class="stat-btn">
+                                <span>📤</span>
+                                <span>Compartir</span>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Post 2 -->
+                    <article class="post-card" data-category="plagas">
+                        <div class="post-header">
+                            <img src="https://ui-avatars.com/api/?name=Juan+Lopez&background=2196F3&color=fff"
+                                class="post-author-avatar">
+                            <div class="post-author-info">
+                                <h4>Juan López</h4>
+                                <span class="post-time">Hace 5 horas</span>
+                            </div>
+                            <span class="category-badge plagas">🐛 Plagas</span>
+                        </div>
+                        <div class="post-content">
+                            <h3>¡Socorro! Cochinillas en mi ficus</h3>
+                            <p>Encontré estas pequeñas plagas blancas en las hojas de mi ficus. ¿Alguien sabe cómo
+                                eliminarlas sin químicos agresivos?</p>
+                            <div class="post-images">
+                                <img src="assets/Images/imagen2.png" alt="Ficus con plaga">
+                            </div>
+                        </div>
+                        <div class="post-stats">
+                            <button class="stat-btn">
+                                <span>👍</span>
+                                <span>18</span>
+                            </button>
+                            <button class="stat-btn">
+                                <span>💬</span>
+                                <span>45</span>
+                            </button>
+                            <button class="stat-btn">
+                                <span>🔖</span>
+                                <span>Guardar</span>
+                            </button>
+                            <button class="stat-btn">
+                                <span>📤</span>
+                                <span>Compartir</span>
+                            </button>
+                        </div>
+                        <div class="post-comments">
+                            <div class="comment">
+                                <img src="https://ui-avatars.com/api/?name=Ana+Martinez&background=9C27B0&color=fff"
+                                    class="comment-avatar">
+                                <div class="comment-content">
+                                    <strong>Ana Martínez</strong>
+                                    <p>Prueba con agua jabonosa y un algodón. Funciona muy bien y es natural.</p>
+                                    <span class="comment-time">Hace 3 horas</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Post 3 -->
+                    <article class="post-card" data-category="consejos">
+                        <div class="post-header">
+                            <img src="https://ui-avatars.com/api/?name=Pedro+Sanchez&background=FF9800&color=fff"
+                                class="post-author-avatar">
+                            <div class="post-author-info">
+                                <h4>Pedro Sánchez</h4>
+                                <span class="post-time">Hace 1 día</span>
+                            </div>
+                            <span class="category-badge consejos">💡 Consejos</span>
+                        </div>
+                        <div class="post-content">
+                            <h3>5 plantas ideales para principiantes</h3>
+                            <p>Si estás empezando en el mundo de las plantas, estas 5 opciones son perfectas: Pothos,
+                                Sansevieria, Suculentas, Spider Plant y ZZ Plant. Son resistentes y requieren poco
+                                mantenimiento.</p>
+                        </div>
+                        <div class="post-stats">
+                            <button class="stat-btn">
+                                <span>👍</span>
+                                <span>67</span>
+                            </button>
+                            <button class="stat-btn">
+                                <span>💬</span>
+                                <span>23</span>
+                            </button>
+                            <button class="stat-btn">
+                                <span>🔖</span>
+                                <span>Guardar</span>
+                            </button>
+                            <button class="stat-btn">
+                                <span>📤</span>
+                                <span>Compartir</span>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Post 4 - Placeholder -->
+                    <article class="post-card" data-category="enfermedades">
+                        <div class="post-header">
+                            <img src="https://ui-avatars.com/api/?name=Laura+Gomez&background=E91E63&color=fff"
+                                class="post-author-avatar">
+                            <div class="post-author-info">
+                                <h4>Laura Gómez</h4>
+                                <span class="post-time">Hace 2 días</span>
+                            </div>
+                            <span class="category-badge enfermedades">🦠 Enfermedades</span>
+                        </div>
+                        <div class="post-content">
+                            <h3>Hojas amarillas: causas y soluciones</h3>
+                            <p>Las hojas amarillas pueden indicar varios problemas: exceso de riego, falta de
+                                nutrientes, o poca luz. Aquí les explico cómo identificar cada uno...</p>
+                        </div>
+                        <div class="post-stats">
+                            <button class="stat-btn">
+                                <span>👍</span>
+                                <span>54</span>
+                            </button>
+                            <button class="stat-btn">
+                                <span>💬</span>
+                                <span>31</span>
+                            </button>
+                            <button class="stat-btn">
+                                <span>🔖</span>
+                                <span>Guardar</span>
+                            </button>
+                            <button class="stat-btn">
+                                <span>📤</span>
+                                <span>Compartir</span>
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- New Post Modal (Placeholder) -->
+    <div class="modal" id="new-post-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content large">
+            <button class="modal-close" id="close-post-modal">×</button>
+            <h2>Nueva Publicación</h2>
+
+            <form id="new-post-form" class="post-form">
+                <div class="form-group">
+                    <label>Título</label>
+                    <input type="text" placeholder="¿Sobre qué quieres hablar?">
+                </div>
+
+                <div class="form-group">
+                    <label>Categoría</label>
+                    <select>
+                        <option value="cuidados">💚 Cuidados</option>
+                        <option value="plagas">🐛 Plagas</option>
+                        <option value="enfermedades">🦠 Enfermedades</option>
+                        <option value="consejos">💡 Consejos</option>
+                        <option value="otro">📝 Otro</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Contenido</label>
+                    <textarea rows="5" placeholder="Comparte tu experiencia o pregunta..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Imágenes (opcional)</label>
+                    <div class="file-upload-simple">
+                        <button type="button" class="btn-secondary">📷 Agregar Imágenes</button>
+                        <span class="file-hint">Máximo 3 imágenes</span>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" id="cancel-post">Cancelar</button>
+                    <button type="submit" class="btn-primary">Publicar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-nav">
+        <a href="Dashboard.html" class="mobile-nav-item">
+            <span class="mobile-icon">📊</span>
+            <span class="mobile-label">Inicio</span>
+        </a>
+        <a href="mis-plantas.html" class="mobile-nav-item">
+            <span class="mobile-icon">🌿</span>
+            <span class="mobile-label">Plantas</span>
+        </a>
+        <a href="diagnostico.html" class="mobile-nav-item floating">
+            <span class="mobile-icon">📸</span>
+        </a>
+        <a href="comunidad.html" class="mobile-nav-item active">
+            <span class="mobile-icon">👥</span>
+            <span class="mobile-label">Comunidad</span>
+        </a>
+        <a href="notificaciones.html" class="mobile-nav-item">
+            <span class="mobile-icon">🔔</span>
+            <span class="mobile-label">Alertas</span>
+        </a>
+    </nav>
+
+    <script src="assets/scripts/dashboard.js"></script>
+    <script src="assets/scripts/comunidad.js"></script>
+</body>
+
+</html>
