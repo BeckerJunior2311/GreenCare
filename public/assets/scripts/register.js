@@ -1,5 +1,4 @@
-﻿// Registration Form Validation and Interaction
-document.addEventListener('DOMContentLoaded', () => {
+﻿document.addEventListener('DOMContentLoaded', () => {
     const registerForm = document.getElementById('register-form');
     const fullnameInput = document.getElementById('fullname');
     const emailInput = document.getElementById('email');
@@ -15,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const successModal = document.getElementById('success-modal');
     const strengthFill = document.getElementById('strength-fill');
     const strengthText = document.getElementById('strength-text');
-    // Toggle password visibility
     if (togglePasswordBtn) {
         togglePasswordBtn.addEventListener('click', () => {
             const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
@@ -30,13 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleConfirmPasswordBtn.textContent = type === 'password' ? '👀' : '🙈';
         });
     }
-    // Validation functions
     const validateEmail = (email) => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
     };
     const validatePhone = (phone) => {
-        if (phone.trim() === '') return true; // Optional field
+        if (phone.trim() === '') return true;
         const phoneRegex = /^[\d\s\+\-\(\)]+$/;
         return phoneRegex.test(phone) && phone.replace(/\D/g, '').length >= 9;
     };
@@ -52,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (/[^a-zA-Z0-9]/.test(password)) strength++;
         return strength;
     };
-    // Show/clear error
     const showError = (input, message) => {
         const errorElement = document.getElementById(`${input.id}-error`);
         if (errorElement) {
@@ -67,7 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
             input.style.borderColor = '#E0E0E0';
         }
     };
-    // Password strength indicator
     if (passwordInput && strengthFill && strengthText) {
         passwordInput.addEventListener('input', () => {
             const strength = checkPasswordStrength(passwordInput.value);
@@ -90,7 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    // Real-time validations
     if (fullnameInput) {
         fullnameInput.addEventListener('blur', () => {
             if (fullnameInput.value.trim().length < 3) {
@@ -160,21 +154,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    // Form submission
     if (registerForm) {
         registerForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            // Clear all errors
             [fullnameInput, emailInput, phoneInput, passwordInput, confirmPasswordInput].forEach(input => {
                 if (input) clearError(input);
             });
             let isValid = true;
-            // Validate fullname
             if (fullnameInput.value.trim().length < 3) {
                 showError(fullnameInput, 'El nombre debe tener al menos 3 caracteres');
                 isValid = false;
             }
-            // Validate email
             if (emailInput.value.trim() === '') {
                 showError(emailInput, 'El correo electrónico es requerido');
                 isValid = false;
@@ -182,12 +172,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 showError(emailInput, 'Por favor, ingresa un correo válido');
                 isValid = false;
             }
-            // Validate phone (optional but must be valid if provided)
             if (phoneInput.value.trim() !== '' && !validatePhone(phoneInput.value)) {
                 showError(phoneInput, 'Por favor, ingresa un teléfono válido');
                 isValid = false;
             }
-            // Validate password
             if (passwordInput.value === '') {
                 showError(passwordInput, 'La contraseña es requerida');
                 isValid = false;
@@ -195,7 +183,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 showError(passwordInput, 'La contraseña debe tener al menos 8 caracteres');
                 isValid = false;
             }
-            // Validate confirm password
             if (confirmPasswordInput.value === '') {
                 showError(confirmPasswordInput, 'Debes confirmar tu contraseña');
                 isValid = false;
@@ -203,7 +190,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 showError(confirmPasswordInput, 'Las contraseñas no coinciden');
                 isValid = false;
             }
-            // Validate terms
             if (!termsCheckbox.checked) {
                 showError(termsCheckbox, 'Debes aceptar los términos y condiciones');
                 isValid = false;
@@ -211,11 +197,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 clearError(termsCheckbox);
             }
             if (!isValid) return;
-            // Show loading state
             btnText.style.display = 'none';
             btnLoader.style.display = 'flex';
             btnRegister.disabled = true;
-            // Simulate API call
             try {
                 const userType = document.querySelector('input[name="user-type"]:checked').value;
                 const newsletter = document.getElementById('newsletter').checked;
@@ -227,20 +211,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     userType: userType,
                     newsletter: newsletter
                 });
-                // Success
                 btnText.style.display = 'block';
                 btnLoader.style.display = 'none';
                 btnRegister.disabled = false;
-                // Show success modal
                 if (successModal) {
                     successModal.style.display = 'flex';
-                    // Redirect to login after 2.5 seconds
                     setTimeout(() => {
                         window.location.href = 'Login.html';
                     }, 2500);
                 }
             } catch (error) {
-                // Error handling
                 btnText.style.display = 'block';
                 btnLoader.style.display = 'none';
                 btnRegister.disabled = false;
@@ -252,34 +232,24 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    // Simulate registration API call
     const simulateRegistration = (userData) => {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
-                // For demo, always succeed
-                console.log('Registered user:', userData);
                 resolve({ success: true, user: userData });
-                // Uncomment to test error state:
-                // reject(new Error('email_exists'));
             }, 1800);
         });
     };
-    // Social registration buttons
     const socialButtons = document.querySelectorAll('.btn-social');
     socialButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-            alert('Función de registro social próximamente disponible');
         });
     });
-    // Terms and privacy links
     const termsLinks = document.querySelectorAll('.link');
     termsLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            alert('Documento próximamente disponible');
         });
     });
-    // Close modal on click outside
     if (successModal) {
         successModal.addEventListener('click', (e) => {
             if (e.target === successModal) {

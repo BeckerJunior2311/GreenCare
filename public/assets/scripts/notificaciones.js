@@ -1,6 +1,4 @@
-﻿// Notificaciones Functionality
-document.addEventListener('DOMContentLoaded', () => {
-    // ===== ELEMENTS =====
+﻿document.addEventListener('DOMContentLoaded', () => {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const notificationItems = document.querySelectorAll('.notification-item');
     const markAllReadBtn = document.getElementById('mark-all-read');
@@ -11,14 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const saveSettings = document.getElementById('save-settings');
     const emptyState = document.getElementById('empty-state');
     const notificationsList = document.querySelector('.notifications-list');
-    // ===== FILTER FUNCTIONALITY =====
     if (filterBtns.length > 0) {
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Update active state
                 filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-                // Get filter value
                 const filter = btn.getAttribute('data-filter');
                 filterNotifications(filter);
             });
@@ -44,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 item.style.display = 'none';
             }
         });
-        // Show empty state if no notifications
         if (visibleCount === 0) {
             emptyState.style.display = 'block';
             notificationsList.style.display = 'none';
@@ -53,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
             notificationsList.style.display = 'flex';
         }
     }
-    // ===== MARK ALL AS READ =====
     if (markAllReadBtn) {
         markAllReadBtn.addEventListener('click', () => {
             const unreadItems = document.querySelectorAll('.notification-item.unread');
@@ -61,18 +54,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 item.classList.remove('unread');
                 item.classList.add('read');
             });
-            // Update badge
             const badge = document.querySelector('.notification-badge');
             if (badge) {
                 badge.textContent = '0';
                 badge.style.display = 'none';
             }
-            // Update filter counts
             updateFilterCounts();
-            alert('✓ Todas las notificaciones marcadas como leídas');
         });
     }
-    // ===== NOTIFICATION ACTION BUTTONS =====
     const actionButtons = document.querySelectorAll('.notification-actions .btn-icon');
     actionButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -84,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 notificationItem.classList.remove('unread');
                 notificationItem.classList.add('read');
                 updateFilterCounts();
-                alert(`✓ "${notificationTitle}" marcada como leída`);
             } else if (title === 'Eliminar') {
                 if (confirm(`¿Eliminar notificación "${notificationTitle}"?`)) {
                     notificationItem.remove();
@@ -92,15 +80,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     checkIfEmpty();
                 }
             } else if (title.includes('Ver')) {
-                alert(`Abriendo detalles de: ${notificationTitle}`);
             } else if (title === 'Completar tarea') {
                 notificationItem.classList.remove('unread');
                 notificationItem.classList.add('read');
-                alert(`✅ Tarea completada: ${notificationTitle}`);
             }
         });
     });
-    // ===== NOTIFICATION ITEM CLICK =====
     notificationItems.forEach(item => {
         item.addEventListener('click', () => {
             if (item.classList.contains('unread')) {
@@ -110,7 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-    // ===== SETTINGS MODAL =====
     if (settingsBtn) {
         settingsBtn.addEventListener('click', () => {
             settingsModal.classList.add('active');
@@ -129,17 +113,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (saveSettings) {
         saveSettings.addEventListener('click', () => {
-            alert('✓ Configuración de notificaciones guardada');
             closeModalHandler();
         });
     }
-    // Close modal on overlay click
     settingsModal?.addEventListener('click', (e) => {
         if (e.target === settingsModal || e.target.classList.contains('modal-overlay')) {
             closeModalHandler();
         }
     });
-    // ===== HELPER FUNCTIONS =====
     function updateFilterCounts() {
         const allCount = document.querySelectorAll('.notification-item').length;
         const unreadCount = document.querySelectorAll('.notification-item.unread').length;
@@ -177,5 +158,4 @@ document.addEventListener('DOMContentLoaded', () => {
             notificationsList.style.display = 'none';
         }
     }
-    console.log('✅ Notificaciones initialized');
 });

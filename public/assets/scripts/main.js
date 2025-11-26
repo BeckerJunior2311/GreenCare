@@ -56,19 +56,16 @@
     const closeModal = () => {
         if (modal) modal.style.display = 'none';
     }
-    // Login button redirects to login page
     if (loginBtn) {
         loginBtn.addEventListener('click', () => {
             window.location.href = 'Login.html';
         });
     }
-    // Register button redirects to register page
     if (registerBtn) {
         registerBtn.addEventListener('click', () => {
             window.location.href = 'Register.html';
         });
     }
-    // Download button shows "coming soon" modal
     if (downloadBtn) downloadBtn.addEventListener('click', openModal);
     if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
     window.addEventListener('click', (event) => { if (event.target == modal) closeModal(); });

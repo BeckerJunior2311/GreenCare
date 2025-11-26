@@ -1,6 +1,4 @@
-﻿// Mis Plantas Functionality
-document.addEventListener('DOMContentLoaded', () => {
-    // ===== ELEMENTS =====
+﻿document.addEventListener('DOMContentLoaded', () => {
     const addPlantBtn = document.getElementById('add-plant-btn');
     const plantModal = document.getElementById('plant-modal');
     const closeModal = document.getElementById('close-modal');
@@ -18,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const previewImg = document.getElementById('preview-img');
     const removeImageBtn = document.getElementById('remove-image');
     const cancelBtn = document.getElementById('cancel-btn');
-    // ===== MODAL HANDLERS =====
     const openModal = () => {
         plantModal.classList.add('active');
         plantModal.style.display = 'flex';
@@ -44,20 +41,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (cancelBtn) {
         cancelBtn.addEventListener('click', closeModalHandler);
     }
-    // ===== FILE UPLOAD =====
     if (fileUpload) {
-        // Click to upload
         uploadPlaceholder.addEventListener('click', () => {
             plantImage.click();
         });
-        // File selection
         plantImage.addEventListener('change', (e) => {
             const file = e.target.files[0];
             if (file) {
                 handleFileUpload(file);
             }
         });
-        // Drag and drop
         fileUpload.addEventListener('dragover', (e) => {
             e.preventDefault();
             uploadPlaceholder.style.borderColor = 'var(--primary-color)';
@@ -75,10 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (file && file.type.startsWith('image/')) {
                 handleFileUpload(file);
             } else {
-                alert('Por favor, sube una imagen válida');
             }
         });
-        // Remove image
         if (removeImageBtn) {
             removeImageBtn.addEventListener('click', () => {
                 plantImage.value = '';
@@ -88,12 +79,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     function handleFileUpload(file) {
-        // Validate file size (5MB max)
         if (file.size > 5 * 1024 * 1024) {
-            alert('La imagen no debe superar los 5MB');
             return;
         }
-        // Show preview
         const reader = new FileReader();
         reader.onload = (e) => {
             previewImg.src = e.target.result;
@@ -102,16 +90,13 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         reader.readAsDataURL(file);
     }
-    // ===== FORM SUBMISSION =====
     if (plantForm) {
         plantForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const saveText = document.getElementById('save-text');
             const saveLoader = document.getElementById('save-loader');
-            // Show loading
             saveText.style.display = 'none';
             saveLoader.style.display = 'inline-block';
-            // Get form data
             const formData = {
                 name: document.getElementById('plant-name').value,
                 species: document.getElementById('plant-species').value,
@@ -119,17 +104,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 notes: document.getElementById('plant-notes').value,
                 image: plantImage.files[0] || null
             };
-            // Simulate API call
             await simulateAddPlant(formData);
-            // Reset loading
             saveText.style.display = 'inline';
             saveLoader.style.display = 'none';
-            // Close modal
             closeModalHandler();
-            // Show success message
-            alert(`¡Planta "${formData.name}" agregada exitosamente! 🌱`);
-            // In a real app, we would refresh the plants grid
-            console.log('Nueva planta agregada:', formData);
         });
     }
     function simulateAddPlant(data) {
@@ -139,14 +117,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 1500);
         });
     }
-    // ===== FILTERS =====
     if (filterBtns.length > 0) {
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Update active state
                 filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-                // Get filter value
                 const filter = btn.getAttribute('data-filter');
                 filterPlants(filter);
             });
@@ -164,7 +139,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.style.display = 'none';
             }
         });
-        // Show/hide empty state
         if (visibleCount === 0) {
             emptyState.style.display = 'block';
             plantsGrid.style.display = 'none';
@@ -173,7 +147,6 @@ document.addEventListener('DOMContentLoaded', () => {
             plantsGrid.style.display = 'grid';
         }
     }
-    // ===== SEARCH =====
     if (searchInput) {
         let searchTimeout;
         searchInput.addEventListener('input', (e) => {
@@ -192,7 +165,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         card.style.display = 'none';
                     }
                 });
-                // Show/hide empty state
                 if (visibleCount === 0 && query.length > 0) {
                     emptyState.style.display = 'block';
                     plantsGrid.style.display = 'none';
@@ -203,7 +175,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 300);
         });
     }
-    // ===== VIEW TOGGLE =====
     if (viewBtns.length > 0) {
         viewBtns.forEach(btn => {
             btn.addEventListener('click', () => {
@@ -212,15 +183,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 const view = btn.getAttribute('data-view');
                 if (view === 'list') {
                     plantsGrid.style.gridTemplateColumns = '1fr';
-                    alert('Vista de lista - Próximamente disponible');
-                    // In a real app, we would change the card layout
                 } else {
                     plantsGrid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(280px, 1fr))';
                 }
             });
         });
     }
-    // ===== PLANT CARD ACTIONS =====
     const actionIcons = document.querySelectorAll('.action-icon');
     actionIcons.forEach(icon => {
         icon.addEventListener('click', (e) => {
@@ -229,34 +197,25 @@ document.addEventListener('DOMContentLoaded', () => {
             const plantName = icon.closest('.plant-card').querySelector('h3').textContent;
             switch (title) {
                 case 'Ver detalles':
-                    alert(`Abriendo detalles de: ${plantName}`);
-                    // In a real app: navigate to plant detail page
                     break;
                 case 'Diagnosticar':
-                    alert(`Iniciando diagnóstico de: ${plantName}`);
                     window.location.href = 'diagnostico.html';
                     break;
                 case 'Editar':
-                    alert(`Editando: ${plantName}`);
-                    // In a real app: open modal with plant data
                     openModal();
                     break;
                 case 'Eliminar':
                     if (confirm(`¿Estás seguro de eliminar "${plantName}"?`)) {
-                        alert(`Planta "${plantName}" eliminada`);
                         icon.closest('.plant-card').remove();
                     }
                     break;
             }
         });
     });
-    // ===== PLANT CARD CLICK (View Details) =====
     const plantCards = document.querySelectorAll('.plant-card:not(.placeholder)');
     plantCards.forEach(card => {
         card.addEventListener('click', () => {
             const plantName = card.querySelector('h3').textContent;
-            alert(`Ver detalles completos de: ${plantName}\n\n(Página de detalle próximamente disponible)`);
         });
     });
-    console.log('✅ Mis Plantas initialized');
 });

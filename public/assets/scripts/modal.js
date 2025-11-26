@@ -1,5 +1,4 @@
-﻿// Custom Modal & Toast System
-class ModalSystem {
+﻿class ModalSystem {
     constructor() {
         this.createToastContainer();
     }
@@ -10,7 +9,6 @@ class ModalSystem {
             document.body.appendChild(container);
         }
     }
-    // Show custom confirm modal
     confirm(options) {
         return new Promise((resolve) => {
             const modal = document.createElement('div');
@@ -54,7 +52,6 @@ class ModalSystem {
             overlay.addEventListener('click', () => close(false));
         });
     }
-    // Show toast notification
     toast(message, type = 'success') {
         const container = document.querySelector('.toast-container');
         const toast = document.createElement('div');
@@ -73,25 +70,20 @@ class ModalSystem {
         container.appendChild(toast);
         const closeBtn = toast.querySelector('.toast-close');
         closeBtn.addEventListener('click', () => this.closeToast(toast));
-        // Auto close after 3 seconds
         setTimeout(() => this.closeToast(toast), 3000);
     }
     closeToast(toast) {
         toast.style.animation = 'slideInRight 0.3s ease reverse';
         setTimeout(() => toast.remove(), 300);
     }
-    // Show success message
     success(message) {
         this.toast(message, 'success');
     }
-    // Show error message
     error(message) {
         this.toast(message, 'error');
     }
-    // Show info message
     info(message) {
         this.toast(message, 'info');
     }
 }
-// Create global instance
 window.modal = new ModalSystem();
