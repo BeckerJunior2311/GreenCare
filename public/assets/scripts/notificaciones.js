@@ -1,4 +1,4 @@
-// Notificaciones Functionality
+﻿// Notificaciones Functionality
 document.addEventListener('DOMContentLoaded', () => {
     // ===== ELEMENTS =====
     const filterBtns = document.querySelectorAll('.filter-btn');
@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const saveSettings = document.getElementById('save-settings');
     const emptyState = document.getElementById('empty-state');
     const notificationsList = document.querySelector('.notifications-list');
-
     // ===== FILTER FUNCTIONALITY =====
     if (filterBtns.length > 0) {
         filterBtns.forEach(btn => {
@@ -19,23 +18,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Update active state
                 filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-
                 // Get filter value
                 const filter = btn.getAttribute('data-filter');
                 filterNotifications(filter);
             });
         });
     }
-
     function filterNotifications(filter) {
         let visibleCount = 0;
-
         notificationItems.forEach(item => {
             const type = item.getAttribute('data-type');
             const isUnread = item.classList.contains('unread');
-
             let shouldShow = false;
-
             if (filter === 'all') {
                 shouldShow = true;
             } else if (filter === 'unread') {
@@ -43,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 shouldShow = type === filter;
             }
-
             if (shouldShow) {
                 item.style.display = 'flex';
                 visibleCount++;
@@ -51,7 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 item.style.display = 'none';
             }
         });
-
         // Show empty state if no notifications
         if (visibleCount === 0) {
             emptyState.style.display = 'block';
@@ -61,41 +53,33 @@ document.addEventListener('DOMContentLoaded', () => {
             notificationsList.style.display = 'flex';
         }
     }
-
     // ===== MARK ALL AS READ =====
     if (markAllReadBtn) {
         markAllReadBtn.addEventListener('click', () => {
             const unreadItems = document.querySelectorAll('.notification-item.unread');
-
             unreadItems.forEach(item => {
                 item.classList.remove('unread');
                 item.classList.add('read');
             });
-
             // Update badge
             const badge = document.querySelector('.notification-badge');
             if (badge) {
                 badge.textContent = '0';
                 badge.style.display = 'none';
             }
-
             // Update filter counts
             updateFilterCounts();
-
             alert('✓ Todas las notificaciones marcadas como leídas');
         });
     }
-
     // ===== NOTIFICATION ACTION BUTTONS =====
     const actionButtons = document.querySelectorAll('.notification-actions .btn-icon');
-
     actionButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.stopPropagation();
             const title = btn.getAttribute('title');
             const notificationItem = btn.closest('.notification-item');
             const notificationTitle = notificationItem.querySelector('h4').textContent;
-
             if (title === 'Marcar como leída') {
                 notificationItem.classList.remove('unread');
                 notificationItem.classList.add('read');
@@ -116,7 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
     // ===== NOTIFICATION ITEM CLICK =====
     notificationItems.forEach(item => {
         item.addEventListener('click', () => {
@@ -127,7 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
     // ===== SETTINGS MODAL =====
     if (settingsBtn) {
         settingsBtn.addEventListener('click', () => {
@@ -135,34 +117,28 @@ document.addEventListener('DOMContentLoaded', () => {
             settingsModal.style.display = 'flex';
         });
     }
-
     const closeModalHandler = () => {
         settingsModal.classList.remove('active');
         settingsModal.style.display = 'none';
     };
-
     if (closeSettings) {
         closeSettings.addEventListener('click', closeModalHandler);
     }
-
     if (cancelSettings) {
         cancelSettings.addEventListener('click', closeModalHandler);
     }
-
     if (saveSettings) {
         saveSettings.addEventListener('click', () => {
             alert('✓ Configuración de notificaciones guardada');
             closeModalHandler();
         });
     }
-
     // Close modal on overlay click
     settingsModal?.addEventListener('click', (e) => {
         if (e.target === settingsModal || e.target.classList.contains('modal-overlay')) {
             closeModalHandler();
         }
     });
-
     // ===== HELPER FUNCTIONS =====
     function updateFilterCounts() {
         const allCount = document.querySelectorAll('.notification-item').length;
@@ -170,11 +146,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const alertsCount = document.querySelectorAll('.notification-item[data-type="alerts"]').length;
         const remindersCount = document.querySelectorAll('.notification-item[data-type="reminders"]').length;
         const updatesCount = document.querySelectorAll('.notification-item[data-type="updates"]').length;
-
         filterBtns.forEach(btn => {
             const filter = btn.getAttribute('data-filter');
             const countSpan = btn.querySelector('.count');
-
             if (countSpan) {
                 switch (filter) {
                     case 'all':
@@ -196,7 +170,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
     function checkIfEmpty() {
         const remainingItems = document.querySelectorAll('.notification-item').length;
         if (remainingItems === 0) {
@@ -204,6 +177,5 @@ document.addEventListener('DOMContentLoaded', () => {
             notificationsList.style.display = 'none';
         }
     }
-
     console.log('✅ Notificaciones initialized');
 });

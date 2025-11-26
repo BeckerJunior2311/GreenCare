@@ -1,4 +1,4 @@
-// Diagnostico Functionality
+﻿// Diagnostico Functionality
 document.addEventListener('DOMContentLoaded', () => {
     // ===== ELEMENTS =====
     const uploadArea = document.getElementById('upload-area');
@@ -17,36 +17,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const newDiagnosisBtn = document.getElementById('new-diagnosis-btn');
     const saveResultBtn = document.getElementById('save-result-btn');
     const shareResultBtn = document.getElementById('share-result-btn');
-
     // ===== FILE UPLOAD =====
     if (selectImageBtn) {
         selectImageBtn.addEventListener('click', () => {
             imageInput.click();
         });
     }
-
     if (uploadPrompt) {
         uploadPrompt.addEventListener('click', () => {
             imageInput.click();
         });
-
         // Drag and drop
         uploadPrompt.addEventListener('dragover', (e) => {
             e.preventDefault();
             uploadPrompt.style.borderColor = 'var(--primary-color)';
             uploadPrompt.style.background = 'rgba(1, 196, 142, 0.05)';
         });
-
         uploadPrompt.addEventListener('dragleave', () => {
             uploadPrompt.style.borderColor = 'var(--gray-300)';
             uploadPrompt.style.background = 'transparent';
         });
-
         uploadPrompt.addEventListener('drop', (e) => {
             e.preventDefault();
             uploadPrompt.style.borderColor = 'var(--gray-300)';
             uploadPrompt.style.background = 'transparent';
-
             const file = e.dataTransfer.files[0];
             if (file && file.type.startsWith('image/')) {
                 handleImageUpload(file);
@@ -55,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
     if (imageInput) {
         imageInput.addEventListener('change', (e) => {
             const file = e.target.files[0];
@@ -64,14 +57,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
     function handleImageUpload(file) {
         // Validate file size (10MB max)
         if (file.size > 10 * 1024 * 1024) {
             alert('La imagen no debe superar los 10MB');
             return;
         }
-
         // Show image preview
         const reader = new FileReader();
         reader.onload = (e) => {
@@ -81,7 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         reader.readAsDataURL(file);
     }
-
     // ===== CHANGE IMAGE =====
     if (changeImageBtn) {
         changeImageBtn.addEventListener('click', () => {
@@ -91,7 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
             resultsSection.style.display = 'none';
         });
     }
-
     // ===== ANALYZE IMAGE =====
     if (analyzeBtn) {
         analyzeBtn.addEventListener('click', async () => {
@@ -99,19 +88,15 @@ document.addEventListener('DOMContentLoaded', () => {
             resultsSection.style.display = 'block';
             analyzingState.style.display = 'block';
             resultsDisplay.style.display = 'none';
-
             // Simulate progress
             await simulateAnalysis();
-
             // Show results
             analyzingState.style.display = 'none';
             resultsDisplay.style.display = 'grid';
-
             // Scroll to results
             resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     }
-
     async function simulateAnalysis() {
         // Simulate AI processing with progress bar
         return new Promise((resolve) => {
@@ -128,7 +113,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 200);
         });
     }
-
     // =====  NEW DIAGNOSIS =====
     if (newDiagnosisBtn) {
         newDiagnosisBtn.addEventListener('click', () => {
@@ -139,35 +123,29 @@ document.addEventListener('DOMContentLoaded', () => {
             resultsSection.style.display = 'none';
             progressFill.style.width = '0%';
             progressText.textContent = '0%';
-
             // Scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
-
     // ===== SAVE RESULT =====
     if (saveResultBtn) {
         saveResultBtn.addEventListener('click', () => {
             alert('✅ Resultado guardado en tu historial\n\n(Funcionalidad completa próximamente disponible)');
         });
     }
-
     // ===== SHARE RESULT =====
     if (shareResultBtn) {
         shareResultBtn.addEventListener('click', () => {
             alert('📤 Compartir en comunidad\n\n(Funcionalidad de comunidad próximamente disponible)');
         });
     }
-
     // ===== RECENT DIAGNOSTICS CLICK =====
     const diagnosticItems = document.querySelectorAll('.diagnostic-item-mini');
-
     diagnosticItems.forEach(item => {
         item.addEventListener('click', () => {
             const plantName = item.querySelector('h5').textContent;
             alert(`Ver detalles del diagnóstico: ${plantName}\n\n(Página de historial próximamente disponible)`);
         });
     });
-
     console.log('✅ Diagnóstico initialized');
 });

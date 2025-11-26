@@ -1,4 +1,4 @@
-/* Comunidad Specific Styles */
+﻿
 
 .community-container {
     padding: 30px;
@@ -6,7 +6,7 @@
     margin: 0 auto;
 }
 
-/* ===== CATEGORY FILTER ===== */
+
 .category-filter {
     background: var(--white);
     padding: 20px;
@@ -41,14 +41,14 @@
     border-color: transparent;
 }
 
-/* ===== POSTS GRID ===== */
+
 .posts-grid {
     display: grid;
     grid-template-columns: 300px 1fr;
     gap: 24px;
 }
 
-/* ===== COMMUNITY SIDEBAR ===== */
+
 .community-sidebar {
     display: flex;
     flex-direction: column;
@@ -119,7 +119,7 @@
     color: var(--text-dark);
 }
 
-/* ===== POSTS FEED ===== */
+
 .posts-feed {
     display: flex;
     flex-direction: column;
@@ -197,7 +197,7 @@
     color: #9C27B0;
 }
 
-/* ===== POST CONTENT ===== */
+
 .post-content h3 {
     color: var(--text-dark);
     margin-bottom: 12px;
@@ -224,7 +224,7 @@
     max-height: 300px;
 }
 
-/* ===== POST STATS ===== */
+
 .post-stats {
     display: flex;
     gap: 16px;
@@ -256,7 +256,7 @@
     font-size: 1.2rem;
 }
 
-/* ===== POST COMMENTS ===== */
+
 .post-comments {
     margin-top: 16px;
     padding-top: 16px;
@@ -298,7 +298,7 @@
     color: var(--gray-700);
 }
 
-/* ===== POST FORM ===== */
+
 .post-form .form-group {
     margin-bottom: 20px;
 }
@@ -348,7 +348,7 @@
     color: var(--text-color);
 }
 
-/* ===== MODAL STYLES ===== */
+
 .modal {
     display: none;
     position: fixed;
@@ -457,7 +457,7 @@
     box-shadow: var(--shadow-md);
 }
 
-/* ===== RESPONSIVE ===== */
+
 @media (max-width: 1024px) {
     .posts-grid {
         grid-template-columns: 1fr;

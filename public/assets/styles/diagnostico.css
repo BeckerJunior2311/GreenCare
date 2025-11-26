@@ -1,4 +1,4 @@
-/* Diagnostico Specific Styles */
+﻿
 
 .diagnostico-container {
     padding: 30px;
@@ -6,7 +6,7 @@
     margin: 0 auto;
 }
 
-/* ===== UPLOAD SECTION ===== */
+
 .upload-section {
     margin-bottom: 30px;
 }
@@ -97,7 +97,7 @@
     color: var(--text-color);
 }
 
-/* ===== IMAGE UPLOADED ===== */
+
 .image-uploaded {
     text-align: center;
 }
@@ -116,7 +116,7 @@
     justify-content: center;
 }
 
-/* ===== ANALYZING STATE ===== */
+
 .analyzing-state {
     text-align: center;
     padding: 60px 40px;
@@ -176,7 +176,7 @@
     color: var(--primary-color);
 }
 
-/* ===== RESULTS DISPLAY ===== */
+
 .results-display {
     display: grid;
     gap: 24px;
@@ -273,7 +273,7 @@
     min-width: 80px;
 }
 
-/* ===== TREATMENT CARD ===== */
+
 .treatment-steps {
     display: flex;
     flex-direction: column;
@@ -309,7 +309,7 @@
     line-height: 1.6;
 }
 
-/* ===== INFO CARD ===== */
+
 .info-card {
     background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
 }
@@ -324,7 +324,7 @@
     line-height: 1.6;
 }
 
-/* ===== RESULT ACTIONS ===== */
+
 .result-actions {
     display: flex;
     justify-content: center;
@@ -332,7 +332,7 @@
     flex-wrap: wrap;
 }
 
-/* ===== RECENT DIAGNOSTICS ===== */
+
 .diagnostics-list {
     display: flex;
     flex-direction: column;
@@ -383,7 +383,7 @@
     color: var(--gray-700);
 }
 
-/* ===== RESPONSIVE ===== */
+
 @media (max-width: 768px) {
     .diagnostico-container {
         padding: 20px 16px;

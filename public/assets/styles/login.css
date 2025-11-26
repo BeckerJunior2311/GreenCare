@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     --primary-color: #01C48E;
     --secondary-color: #008E84;
     --accent-color: #6DD831;
@@ -42,7 +42,7 @@ body {
     overflow: hidden;
 }
 
-/* Left Side - Branding */
+
 .login-brand {
     flex: 1;
     background: var(--gradient-primary);
@@ -132,7 +132,7 @@ body {
     font-weight: 600;
 }
 
-/* Right Side - Login Form */
+
 .login-form-section {
     flex: 1;
     padding: 60px 50px;
@@ -451,7 +451,7 @@ body {
     color: var(--primary-color);
 }
 
-/* Modal */
+
 .modal {
     position: fixed;
     top: 0;
@@ -521,7 +521,7 @@ body {
     }
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
     .login-container {
         flex-direction: column;

@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     --primary-color: #01C48E;
     --secondary-color: #008E84;
     --accent-color: #6DD831;
@@ -43,7 +43,7 @@ body {
     overflow: hidden;
 }
 
-/* Left Side - Branding */
+
 .register-brand {
     flex: 0.9;
     background: var(--gradient-primary);
@@ -126,7 +126,7 @@ body {
     opacity: 0.9;
 }
 
-/* Right Side - Registration Form */
+
 .register-form-section {
     flex: 1.1;
     padding: 50px 45px;
@@ -226,7 +226,7 @@ body {
     margin-top: -5px;
 }
 
-/* Password Strength Meter */
+
 .password-strength {
     margin-top: 5px;
 }
@@ -267,7 +267,7 @@ body {
     color: var(--text-color);
 }
 
-/* User Type Selector */
+
 .user-type-selector {
     display: flex;
     gap: 15px;
@@ -316,7 +316,7 @@ body {
     text-align: center;
 }
 
-/* Checkbox */
+
 .checkbox-container {
     display: flex;
     align-items: flex-start;
@@ -388,7 +388,7 @@ body {
     color: var(--secondary-color);
 }
 
-/* Buttons */
+
 .btn-register {
     background: var(--gradient-primary);
     color: var(--white);
@@ -533,7 +533,7 @@ body {
     color: var(--primary-color);
 }
 
-/* Modal */
+
 .modal {
     position: fixed;
     top: 0;
@@ -603,7 +603,7 @@ body {
     }
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
     .register-container {
         flex-direction: column;

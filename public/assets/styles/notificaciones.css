@@ -1,4 +1,4 @@
-/* Notificaciones Specific Styles */
+﻿
 
 .notifications-container {
     padding: 30px;
@@ -6,7 +6,7 @@
     margin: 0 auto;
 }
 
-/* ===== FILTER BAR ===== */
+
 .filter-bar {
     background: var(--white);
     padding: 20px;
@@ -68,7 +68,7 @@
     gap: 12px;
 }
 
-/* ===== NOTIFICATIONS LIST ===== */
+
 .notifications-list {
     display: flex;
     flex-direction: column;
@@ -168,7 +168,7 @@
     background: rgba(229, 115, 115, 0.1);
 }
 
-/* ===== EMPTY STATE ===== */
+
 .empty-state {
     text-align: center;
     padding: 80px 20px;
@@ -189,7 +189,7 @@
     color: var(--text-color);
 }
 
-/* ===== SETTINGS MODAL ===== */
+
 .settings-section {
     margin-bottom: 24px;
 }
@@ -238,7 +238,7 @@
     margin-top: 24px;
 }
 
-/* ===== RESPONSIVE ===== */
+
 @media (max-width: 768px) {
     .notifications-container {
         padding: 20px 16px;

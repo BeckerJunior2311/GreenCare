@@ -1,4 +1,4 @@
-html,
+﻿html,
 body {
     height: 100%;
     scroll-behavior: smooth;
@@ -931,10 +931,10 @@ footer ul li h3 {
     }
 }
 
-/* Estilos para el Modal */
+
 .modal {
     display: none;
-    /* Oculto por defecto */
+    
     position: fixed;
     z-index: 1000;
     left: 0;

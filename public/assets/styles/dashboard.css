@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     --primary-color: #01C48E;
     --secondary-color: #008E84;
     --accent-color: #6DD831;
@@ -38,7 +38,7 @@ body {
     color: var(--text-color);
 }
 
-/* ===== SIDEBAR NAVIGATION ===== */
+
 .sidebar {
     position: fixed;
     left: 0;
@@ -153,7 +153,7 @@ body {
     background: rgba(229, 115, 115, 0.1);
 }
 
-/* ===== MAIN CONTENT ===== */
+
 .main-content {
     margin-left: var(--sidebar-width);
     min-height: 100vh;
@@ -161,7 +161,7 @@ body {
     transition: margin-left 0.3s ease;
 }
 
-/* ===== TOPBAR ===== */
+
 .topbar {
     background: var(--white);
     padding: 20px 30px;
@@ -251,13 +251,13 @@ body {
     font-size: 0.95rem;
 }
 
-/* ===== DASHBOARD CONTAINER ===== */
+
 .dashboard-container {
     padding: 30px;
     max-width: 1400px;
 }
 
-/* ===== WELCOME BANNER ===== */
+
 .welcome-banner {
     background: var(--gradient-primary);
     border-radius: 20px;
@@ -329,7 +329,7 @@ body {
     filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.2));
 }
 
-/* ===== STATS GRID ===== */
+
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -391,14 +391,14 @@ body {
     color: var(--text-color);
 }
 
-/* ===== CONTENT GRID ===== */
+
 .content-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 24px;
 }
 
-/* ===== CARDS ===== */
+
 .card {
     background: var(--white);
     border-radius: 16px;
@@ -438,7 +438,7 @@ body {
     color: var(--secondary-color);
 }
 
-/* ===== DIAGNOSTIC LIST ===== */
+
 .diagnostic-list {
     display: flex;
     flex-direction: column;
@@ -491,7 +491,7 @@ body {
     color: var(--gray-700);
 }
 
-/* ===== ALERT LIST ===== */
+
 .alert-list {
     display: flex;
     flex-direction: column;
@@ -550,7 +550,7 @@ body {
     color: var(--gray-700);
 }
 
-/* ===== QUICK ACTIONS ===== */
+
 .quick-actions {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -587,7 +587,7 @@ body {
     color: var(--text-dark);
 }
 
-/* ===== TIP CARD ===== */
+
 .tip-card {
     background: linear-gradient(135deg, #FFF9C4 0%, #FFF59D 100%);
     border: none;
@@ -616,7 +616,7 @@ body {
     box-shadow: var(--shadow-sm);
 }
 
-/* ===== MOBILE NAVIGATION ===== */
+
 .mobile-nav {
     display: none;
     position: fixed;
@@ -667,7 +667,7 @@ body {
     font-weight: 500;
 }
 
-/* ===== RESPONSIVE ===== */
+
 @media (max-width: 1024px) {
     .sidebar {
         transform: translateX(-100%);

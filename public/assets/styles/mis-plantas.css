@@ -1,6 +1,6 @@
-/* Mis Plantas Specific Styles */
+﻿
 
-/* ===== FILTERS BAR ===== */
+
 .filters-bar {
     background: var(--white);
     padding: 20px 30px;
@@ -103,7 +103,7 @@
     margin-right: 6px;
 }
 
-/* ===== PLANTS GRID ===== */
+
 .plantas-container {
     padding: 30px;
     max-width: 1400px;
@@ -265,7 +265,7 @@
     margin-bottom: 20px;
 }
 
-/* ===== EMPTY STATE ===== */
+
 .empty-state {
     text-align: center;
     padding: 60px 20px;
@@ -286,7 +286,7 @@
     color: var(--text-color);
 }
 
-/* ===== MODAL ===== */
+
 .modal {
     display: none;
     position: fixed;
@@ -354,7 +354,7 @@
     color: var(--text-dark);
 }
 
-/* ===== FORM STYLES ===== */
+
 .plant-form {
     display: flex;
     flex-direction: column;
@@ -402,7 +402,7 @@
     resize: vertical;
 }
 
-/* ===== FILE UPLOAD ===== */
+
 .file-upload {
     position: relative;
 }
@@ -469,7 +469,7 @@
     transform: scale(1.1);
 }
 
-/* ===== FORM ACTIONS ===== */
+
 .form-actions {
     display: flex;
     gap: 12px;
@@ -526,7 +526,7 @@
     }
 }
 
-/* ===== RESPONSIVE ===== */
+
 @media (max-width: 768px) {
     .filters-bar {
         flex-direction: column;

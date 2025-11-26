@@ -1,4 +1,4 @@
-// Login Form Validation and Interaction
+﻿// Login Form Validation and Interaction
 document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('login-form');
     const emailInput = document.getElementById('email');
@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnText = document.querySelector('.btn-text');
     const btnLoader = document.querySelector('.btn-loader');
     const successModal = document.getElementById('success-modal');
-
     // Toggle password visibility
     if (togglePasswordBtn) {
         togglePasswordBtn.addEventListener('click', () => {
@@ -17,18 +16,15 @@ document.addEventListener('DOMContentLoaded', () => {
             togglePasswordBtn.textContent = type === 'password' ? '👀' : '🙈';
         });
     }
-
     // Email validation
     const validateEmail = (email) => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
     };
-
     // Password validation
     const validatePassword = (password) => {
         return password.length >= 6;
     };
-
     // Show error message
     const showError = (input, message) => {
         const errorElement = document.getElementById(`${input.id}-error`);
@@ -37,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
             input.style.borderColor = '#E57373';
         }
     };
-
     // Clear error message
     const clearError = (input) => {
         const errorElement = document.getElementById(`${input.id}-error`);
@@ -46,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
             input.style.borderColor = '#E0E0E0';
         }
     };
-
     // Real-time email validation
     if (emailInput) {
         emailInput.addEventListener('blur', () => {
@@ -58,14 +52,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 clearError(emailInput);
             }
         });
-
         emailInput.addEventListener('input', () => {
             if (emailInput.value.trim() !== '') {
                 clearError(emailInput);
             }
         });
     }
-
     // Real-time password validation
     if (passwordInput) {
         passwordInput.addEventListener('blur', () => {
@@ -77,25 +69,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 clearError(passwordInput);
             }
         });
-
         passwordInput.addEventListener('input', () => {
             if (passwordInput.value !== '') {
                 clearError(passwordInput);
             }
         });
     }
-
     // Form submission
     if (loginForm) {
         loginForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-
             // Clear previous errors
             clearError(emailInput);
             clearError(passwordInput);
-
             let isValid = true;
-
             // Validate email
             if (emailInput.value.trim() === '') {
                 showError(emailInput, 'El correo electrónico es requerido');
@@ -104,7 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 showError(emailInput, 'Por favor, ingresa un correo válido');
                 isValid = false;
             }
-
             // Validate password
             if (passwordInput.value === '') {
                 showError(passwordInput, 'La contraseña es requerida');
@@ -113,27 +99,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 showError(passwordInput, 'La contraseña debe tener al menos 6 caracteres');
                 isValid = false;
             }
-
             if (!isValid) return;
-
             // Show loading state
             btnText.style.display = 'none';
             btnLoader.style.display = 'flex';
             btnLogin.disabled = true;
-
             // Simulate API call (replace with actual API call in production)
             try {
                 await simulateLogin(emailInput.value, passwordInput.value);
-
                 // Success
                 btnText.style.display = 'block';
                 btnLoader.style.display = 'none';
                 btnLogin.disabled = false;
-
                 // Show success modal
                 if (successModal) {
                     successModal.style.display = 'flex';
-
                     // Redirect to dashboard after 2 seconds
                     setTimeout(() => {
                         window.location.href = 'Dashboard.html';
@@ -144,7 +124,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 btnText.style.display = 'block';
                 btnLoader.style.display = 'none';
                 btnLogin.disabled = false;
-
                 if (error.message === 'invalid_credentials') {
                     showError(emailInput, 'Credenciales incorrectas');
                     showError(passwordInput, 'Verifica tu email y contraseña');
@@ -154,7 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
     // Simulate login API call
     const simulateLogin = (email, password) => {
         return new Promise((resolve, reject) => {
@@ -171,7 +149,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 1500); // Simulate network delay
         });
     };
-
     // Social login buttons (for demonstration)
     const socialButtons = document.querySelectorAll('.btn-social');
     socialButtons.forEach(btn => {
@@ -179,7 +156,6 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Función de login social próximamente disponible');
         });
     });
-
     // Forgot password link
     const forgotPasswordLink = document.querySelector('.forgot-password');
     if (forgotPasswordLink) {
@@ -188,7 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Función de recuperación de contraseña próximamente disponible');
         });
     }
-
     // Close modal on click outside
     if (successModal) {
         successModal.addEventListener('click', (e) => {
@@ -197,7 +172,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
     // Add enter key support
     document.addEventListener('keypress', (e) => {
         if (e.key === 'Enter' && document.activeElement.tagName !== 'BUTTON') {
