@@ -1,6 +1,5 @@
-# GreenCare - Landing Page
-
-[cite_start]Proyecto del curso IHC y Tecnologías Móviles (3992)[cite: 3]. Este repositorio contiene la implementación de la Landing Page para la solución digital GreenCare.
+# GreenCare
+Website de GreenCare
 
 ## Sobre el Proyecto
 

@@ -131,7 +131,7 @@ body {
     flex: 1.1;
     padding: 50px 45px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     overflow-y: auto;
     max-height: 700px;
