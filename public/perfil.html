@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    
+
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <img src="assets/Images/GreenCare.png" alt="GreenCare Logo" class="sidebar-logo">
@@ -61,16 +61,16 @@
         </div>
     </aside>
 
-    
+
     <main class="main-content">
-        
+
         <header class="topbar">
             <div class="topbar-left">
                 <h1 class="page-title">Mi Perfil</h1>
                 <p class="page-subtitle">Gestiona tu información personal y preferencias</p>
             </div>
             <div class="topbar-right">
-                <div class="user-profile">
+                <div class="user-profile" onclick="window.location.href='perfil.html'" style="cursor: pointer;">
                     <img src="https://ui-avatars.com/api/?name=Usuario&background=01C48E&color=fff" alt="Usuario"
                         class="user-avatar">
                     <span class="user-name">Usuario</span>
@@ -78,9 +78,9 @@
             </div>
         </header>
 
-        
+
         <div class="profile-container">
-            
+
             <section class="card profile-header-card">
                 <div class="profile-avatar-section">
                     <div class="avatar-large">
@@ -109,16 +109,16 @@
                 </div>
             </section>
 
-            
+
             <div class="tabs-container">
                 <button class="tab-btn active" data-tab="personal">👤 Información Personal</button>
                 <button class="tab-btn" data-tab="security">🔒 Seguridad</button>
                 <button class="tab-btn" data-tab="preferences">⚙️ Preferencias</button>
             </div>
 
-            
+
             <div class="tabs-content">
-                
+
                 <div class="tab-panel active" id="personal-tab">
                     <section class="card">
                         <h3>Información Personal</h3>
@@ -156,7 +156,7 @@
                     </section>
                 </div>
 
-                
+
                 <div class="tab-panel" id="security-tab">
                     <section class="card">
                         <h3>Cambiar Contraseña</h3>
@@ -206,7 +206,7 @@
                     </section>
                 </div>
 
-                
+
                 <div class="tab-panel" id="preferences-tab">
                     <section class="card">
                         <h3>Preferencias Generales</h3>
@@ -293,7 +293,7 @@
         </div>
     </main>
 
-    
+
     <nav class="mobile-nav">
         <a href="Dashboard.html" class="mobile-nav-item">
             <span class="mobile-icon">📊</span>

@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    
+
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <img src="assets/Images/GreenCare.png" alt="GreenCare Logo" class="sidebar-logo">
@@ -60,9 +60,9 @@
         </div>
     </aside>
 
-    
+
     <main class="main-content">
-        
+
         <header class="topbar">
             <div class="topbar-left">
                 <h1 class="page-title">Comunidad GreenCare</h1>
@@ -72,7 +72,7 @@
                 <button class="btn-primary" id="new-post-btn">
                     ✏️ Nueva Publicación
                 </button>
-                <div class="user-profile">
+                <div class="user-profile" onclick="window.location.href='perfil.html'" style="cursor: pointer;">
                     <img src="https://ui-avatars.com/api/?name=Usuario&background=01C48E&color=fff" alt="Usuario"
                         class="user-avatar">
                     <span class="user-name">Usuario</span>
@@ -80,9 +80,9 @@
             </div>
         </header>
 
-        
+
         <div class="community-container">
-            
+
             <section class="category-filter">
                 <button class="category-btn active" data-category="all">🌐 Todas</button>
                 <button class="category-btn" data-category="plagas">🐛 Plagas</button>
@@ -92,9 +92,9 @@
                 <button class="category-btn" data-category="otro">📝 Otro</button>
             </section>
 
-            
+
             <div class="posts-grid">
-                
+
                 <aside class="community-sidebar">
                     <div class="card stats-card">
                         <h3>Estadísticas</h3>
@@ -131,9 +131,9 @@
                     </div>
                 </aside>
 
-                
+
                 <div class="posts-feed">
-                    
+
                     <article class="post-card" data-category="cuidados">
                         <div class="post-header">
                             <img src="https://ui-avatars.com/api/?name=Maria+Garcia&background=4CAF50&color=fff"
@@ -172,7 +172,7 @@
                         </div>
                     </article>
 
-                    
+
                     <article class="post-card" data-category="plagas">
                         <div class="post-header">
                             <img src="https://ui-avatars.com/api/?name=Juan+Lopez&background=2196F3&color=fff"
@@ -222,7 +222,7 @@
                         </div>
                     </article>
 
-                    
+
                     <article class="post-card" data-category="consejos">
                         <div class="post-header">
                             <img src="https://ui-avatars.com/api/?name=Pedro+Sanchez&background=FF9800&color=fff"
@@ -259,7 +259,7 @@
                         </div>
                     </article>
 
-                    
+
                     <article class="post-card" data-category="enfermedades">
                         <div class="post-header">
                             <img src="https://ui-avatars.com/api/?name=Laura+Gomez&background=E91E63&color=fff"
@@ -299,7 +299,7 @@
         </div>
     </main>
 
-    
+
     <div class="modal" id="new-post-modal">
         <div class="modal-overlay"></div>
         <div class="modal-content large">
@@ -325,7 +325,7 @@
 
                 <div class="form-group">
                     <label>Contenido</label>
-                    <textarea rows="5" placeholder="Comparte tu experiencia o pregunta..."></textarea>
+                    <textarea placeholder="Comparte tu experiencia o pregunta..."></textarea>
                 </div>
 
                 <div class="form-group">
@@ -344,7 +344,7 @@
         </div>
     </div>
 
-    
+
     <nav class="mobile-nav">
         <a href="Dashboard.html" class="mobile-nav-item">
             <span class="mobile-icon">📊</span>

@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    
+
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <img src="assets/Images/GreenCare.png" alt="GreenCare Logo" class="sidebar-logo">
@@ -60,16 +60,16 @@
         </div>
     </aside>
 
-    
+
     <main class="main-content">
-        
+
         <header class="topbar">
             <div class="topbar-left">
                 <h1 class="page-title">Diagnóstico IA</h1>
                 <p class="page-subtitle">Analiza la salud de tus plantas con inteligencia artificial</p>
             </div>
             <div class="topbar-right">
-                <div class="user-profile">
+                <div class="user-profile" onclick="window.location.href='perfil.html'" style="cursor: pointer;">
                     <img src="https://ui-avatars.com/api/?name=Usuario&background=01C48E&color=fff" alt="Usuario"
                         class="user-avatar">
                     <span class="user-name">Usuario</span>
@@ -77,9 +77,9 @@
             </div>
         </header>
 
-        
+
         <div class="diagnostico-container">
-            
+
             <section class="upload-section card">
                 <h2>Sube una foto de tu planta</h2>
                 <p class="section-subtitle">Nuestro sistema de IA analizará la imagen y detectará posibles problemas</p>
@@ -118,9 +118,9 @@
                 </div>
             </section>
 
-            
+
             <section class="results-section" id="results-section" style="display: none;">
-                
+
                 <div class="analyzing-state card" id="analyzing-state">
                     <div class="analyzing-animation">
                         <div class="spinner-large"></div>
@@ -133,9 +133,9 @@
                     </div>
                 </div>
 
-                
+
                 <div class="results-display" id="results-display" style="display: none;">
-                    
+
                     <div class="card diagnosis-card">
                         <div class="card-header">
                             <h3>📋 Diagnóstico</h3>
@@ -161,7 +161,7 @@
                         </div>
                     </div>
 
-                    
+
                     <div class="card treatment-card">
                         <div class="card-header">
                             <h3>💊 Tratamiento Recomendado</h3>
@@ -194,7 +194,7 @@
                         </div>
                     </div>
 
-                    
+
                     <div class="card info-card">
                         <h4>ℹ️ Información Adicional</h4>
                         <p><strong>Prevención:</strong> Fertiliza cada 2-3 semanas durante la temporada de crecimiento.
@@ -203,7 +203,7 @@
                             semanas.</p>
                     </div>
 
-                    
+
                     <div class="result-actions">
                         <button class="btn-secondary" id="new-diagnosis-btn">
                             🔄 Nuevo Diagnóstico
@@ -218,7 +218,7 @@
                 </div>
             </section>
 
-            
+
             <section class="card recent-diagnostics">
                 <div class="card-header">
                     <h3>Diagnósticos Recientes</h3>
@@ -246,7 +246,7 @@
         </div>
     </main>
 
-    
+
     <nav class="mobile-nav">
         <a href="Dashboard.html" class="mobile-nav-item">
             <span class="mobile-icon">📊</span>
